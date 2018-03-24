@@ -1,0 +1,54 @@
+// alle tasks ---> https://docs.gradle.org/current/dsl/
+
+buildscript { //
+    ext {//properties for whole build
+        springBootVersion = '1.5.10.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//all dependencies need to be on classpath when project is build. mit dem plugin
+        //bill of materials,  wir müssen keine weiter information angeben über versionen alles was unten spring ist ist auf 1.5.10.RELEASE mit dem plugin gesetzt
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse' // import eclispe Tasks
+apply plugin: 'org.springframework.boot' //  gradle/task/applicatin/bootRun comand komt hier raus //bootRepackage baut  war,jar
+apply plugin: 'war' // heir kommt der war Task
+
+//das ist ein task
+war {//war for jboss deploy
+    baseName = 'arkadiWar'
+    version = '1.0'
+}
+
+configurations {
+    providedRuntime
+}
+/*jar {
+    baseName = 'arkadiJar'
+    version = '1.0'
+}*/
+
+group 'elastic2018'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.kafka:spring-kafka')
+    //providedRuntime("org.springframework.boot:spring-boot-starter-tomcat") //exclude tomcat, geht auch ohne mit dem "configurations" task
+    compile group: 'org.twitter4j', name: 'twitter4j-core', version: '4.0.6'
+    compile group: 'org.twitter4j', name: 'twitter4j-stream', version: '4.0.6'
+    compile group: 'org.twitter4j', name: 'twitter4j-examples', version: '4.0.6'
+    compile group: 'org.elasticsearch', name: 'elasticsearch', version: '6.0.1'
+    compile group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: '6.0.1'
+}
