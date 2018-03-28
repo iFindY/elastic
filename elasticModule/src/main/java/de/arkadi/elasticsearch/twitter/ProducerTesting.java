@@ -1,9 +1,16 @@
 package de.arkadi.elasticsearch.twitter;
 
 import de.arkadi.elasticsearch.kafka.KafkaProducer;
+import de.arkadi.elasticsearch.model.Message;
+import de.arkadi.elasticsearch.model.Request;
+import de.arkadi.elasticsearch.model.Result;
 import twitter4j.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 public class ProducerTesting implements UserStreamListener {
 
@@ -17,15 +24,17 @@ public class ProducerTesting implements UserStreamListener {
   }
 
   public void onStatus(Status status) {
-    //System.out.println("onStatus @" + status.getUser().getScreenName() + " - " + status.getText());
 
- /*   this.kafkaProducer.send(String.valueOf(status.getId()), status.getText());
+    System.out.println("onStatus @" + status.getUser().getScreenName() + " - " + status.getText());
+
+    Message my = new Message(status.getId() + "", status.getText());
+    this.kafkaProducer.send(my);
     try {
       latch.await(0, TimeUnit.SECONDS);
     }
     catch (InterruptedException e) {
       e.printStackTrace();
-    }*/
+    }
 
   }
 

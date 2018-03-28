@@ -11,19 +11,20 @@ public class TwitterKafkaServiceTesting {
   private TwitterStream twitterStream;
 
   public TwitterKafkaServiceTesting(ConfigurationBuilder configuration,
-                             KafkaProducer kafkaProducer) {
+                                    KafkaProducer kafkaProducer) {
 
     FilterQuery tweetFilterQuery = new FilterQuery();
     twitterStream = new TwitterStreamFactory(configuration.build()).getInstance();
     twitterStream.addListener(new ProducerTesting(kafkaProducer));
-    tweetFilterQuery.track("London","Berlin","Moscow");
+    tweetFilterQuery.track("London", "Berlin", "Moscow");
     tweetFilterQuery.language("en");
     streamToKafka(tweetFilterQuery);
-
 
   }
 
   private void streamToKafka(FilterQuery filterQuery) {
+
+    System.out.println("TWEETER STREAM STARTED");
     twitterStream.filter(filterQuery);
   }
 

@@ -1,4 +1,4 @@
-package de.arkadi.elasticsearch.elasticsearch;
+package de.arkadi.elasticsearch.spring;
 
 import de.arkadi.elasticsearch.elasticsearch.repository.MessageRepository;
 import org.apache.http.HttpHost;
@@ -12,11 +12,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import javax.annotation.PostConstruct;
+import java.io.IOException;
 
 @Configuration
 @PropertySource("classpath:/application.properties")
-@EnableAutoConfiguration
-@ComponentScan(basePackages = { "de.arkadi.elasticsearch.elasticsearch.repository" })
 public class ElasticsearchConfig {
 
   @Value("${elasticsearch.host}")
@@ -28,13 +27,20 @@ public class ElasticsearchConfig {
   @Value("${elasticsearch.clustername}")
   private String EsClusterName;
 
+  @Value("${elasticsearch.in}")
+  private String inIndex;
+
+  @Value("${elasticsearch.out}")
+  private String outIndex;
+
   @PostConstruct
-  public void init() {
+  public void init() throws IOException {
 
     //elasticsearchTemplate.deleteIndex(Message.class);
-    //elasticsearchTemplate.createIndex(Message.class);
+    messageRepository().createIndex(inIndex);
     //elasticsearchTemplate.putMapping(Message.class);
     //elasticsearchTemplate.refresh(Message.class);
+    System.out.println("-----> elasticsearch mapping created <-----");
   }
 
   @Bean

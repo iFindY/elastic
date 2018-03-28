@@ -1,4 +1,4 @@
-package de.arkadi.elasticsearch.spring;
+package de.arkadi.elasticsearch.restController;
 
 import de.arkadi.elasticsearch.elasticsearch.service.MessageService;
 import de.arkadi.elasticsearch.model.Message;

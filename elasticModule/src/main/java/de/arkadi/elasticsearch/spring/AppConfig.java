@@ -1,6 +1,5 @@
 package de.arkadi.elasticsearch.spring;
 
-import de.arkadi.elasticsearch.elasticsearch.ElasticsearchConfig;
 import de.arkadi.elasticsearch.elasticsearch.repository.MessageRepository;
 import de.arkadi.elasticsearch.elasticsearch.service.MessageService;
 import de.arkadi.elasticsearch.elasticsearch.service.MessageServiceImpl;
@@ -8,130 +7,92 @@ import de.arkadi.elasticsearch.kafka.KafkaConsumer;
 import de.arkadi.elasticsearch.kafka.KafkaProducer;
 import de.arkadi.elasticsearch.model.Message;
 import de.arkadi.elasticsearch.model.Result;
-import de.arkadi.elasticsearch.twitter.MessageStorageTesting;
-import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.common.serialization.StringDeserializer;
-import org.apache.kafka.common.serialization.StringSerializer;
+import de.arkadi.elasticsearch.twitter.TwitterKafkaServiceTesting;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.env.Environment;
-import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
-import org.springframework.kafka.core.*;
-import org.springframework.kafka.support.serializer.JsonDeserializer;
-import org.springframework.kafka.support.serializer.JsonSerializer;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.kafka.core.KafkaTemplate;
+import twitter4j.conf.ConfigurationBuilder;
 
 @Configuration
 @EnableAutoConfiguration
 @PropertySource("classpath:/application.properties")
-@Import(ElasticsearchConfig.class)
+@Import({ KafkaConfig.class, ElasticsearchConfig.class })
 public class AppConfig {
 
-  @Autowired
-  Environment environment;
-  @Autowired
-  MessageRepository messageRepository;
+  @Value("${twitter.ConsumerKey}")
+  private String key;
+  @Value("${twitter.ConsumerSecret}")
+  private String keySecret;
+  @Value("${twitter.AccessToken}")
+  private String token;
+  @Value("${twitter.AccessTokenSecret}")
+  private String tokenSecret;
+  @Value("${kafka.out.topic}")
+  private String kafkaOutTopic;
+  @Value("${kafka.in.topic}")
+  private String kafkaInTopic;
 
+  @Autowired KafkaTemplate<String, Result> kafkaTemplate;
+  @Autowired KafkaTemplate<String, Message> kafkaTemplateTest;
+  @Autowired MessageRepository messageRepository;
+
+  /**
+   * Getting Twitter data
+   */
   @Bean
-  public static PropertySourcesPlaceholderConfigurer propertyPlaceholderConfigurer() {
+  public TwitterKafkaServiceTesting TwitterKafkaStreamService() {
 
-    return new PropertySourcesPlaceholderConfigurer();
+    ConfigurationBuilder configuration = new ConfigurationBuilder();
+    configuration.setDebugEnabled(true)
+      .setOAuthConsumerKey(key)
+      .setOAuthConsumerSecret(keySecret)
+      .setOAuthAccessToken(token)
+      .setOAuthAccessTokenSecret(tokenSecret);
+
+    return new TwitterKafkaServiceTesting(configuration, kafkaProducerTest());
   }
 
-  @Bean
-  public Map<String, Object> producerConfigs() {
-
-    Map<String, Object> props = new HashMap<>();
-    props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
-              environment.getProperty("kafka.bootstrap-servers"));
-    props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-    props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
-    return props;
-  }
-
-  @Bean
-  public Map<String, Object> consumerConfig() {
-
-    Map<String, Object> props = new HashMap<>();
-    props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
-              environment.getProperty("kafka.bootstrap-servers"));
-    props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-    props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
-    props.put(ConsumerConfig.GROUP_ID_CONFIG, environment.getProperty("kafka.consumer.group-id"));
-    return props;
-  }
-
-  @Bean
-  public ConsumerFactory<String, Message> consumerFactory() {
-
-    return new DefaultKafkaConsumerFactory<>(consumerConfig(),
-                                             new StringDeserializer(),
-                                             new JsonDeserializer<>(Message.class));
-  }
-
-  @Bean
-  public ProducerFactory<String, Result> producerFactory() {
-
-    return new DefaultKafkaProducerFactory<>(producerConfigs());
-  }
-
-  @Bean
-  public KafkaTemplate<String, Result> kafkaTemplate() {
-
-    return new KafkaTemplate<>(producerFactory());
-  }
-
-/*    @Bean
-    public TwitterKafkaService TwitterKafkaStreamService() {
-
-        ConfigurationBuilder configuration = new ConfigurationBuilder();
-        configuration.setDebugEnabled( true )
-                .setOAuthConsumerKey( environment.getProperty( "twitter.ConsumerKey" ) )
-                .setOAuthConsumerSecret( environment.getProperty( "twitter.ConsumerSecret" ) )
-                .setOAuthAccessToken( environment.getProperty( "twitter.AccessToken" ) )
-                .setOAuthAccessTokenSecret( environment.getProperty( "twitter.AccessTokenSecret" ) );
-
-        return new TwitterKafkaService( configuration, kafkaProducer() );
-    }*/
-
-  @Bean
-  public ConcurrentKafkaListenerContainerFactory<String, Message> kafkaListenerContainerFactory() {
-
-    ConcurrentKafkaListenerContainerFactory<String, Message> factory = new ConcurrentKafkaListenerContainerFactory<>();
-    factory.setConsumerFactory(consumerFactory());
-
-    return factory;
-  }
-
+  /**
+   * create a producer which will push data to topic. It uses a spring template and a kafka address.
+   */
   @Bean
   public KafkaProducer kafkaProducer() {
 
-    return new KafkaProducer(kafkaTemplate(), environment.getProperty("kafka.out.topic"));
+    return new KafkaProducer(kafkaTemplate, kafkaOutTopic);
   }
 
-  @Bean
-  public MessageStorageTesting messageStorage() {
-
-    return new MessageStorageTesting();
-  }
-
+  /**
+   * consume messages to store or  search requests to answer
+   */
   @Bean
   public KafkaConsumer kafkaConsumer() {
 
     return new KafkaConsumer(messageService());
   }
 
+  /**
+   * it create a Service which communicants with Elasticsearch.
+   * read/write Service.
+   * it takes an elasticsearch and an kafka connector.
+   */
   @Bean
   public MessageService messageService() {
 
     return new MessageServiceImpl(messageRepository, kafkaProducer());
+  }
+
+  //-------Test area----------//
+
+  /**
+   * read out twitter and  push it  to kafka
+   */
+  @Bean KafkaProducer kafkaProducerTest() {
+
+    return new KafkaProducer(kafkaTemplate, kafkaInTopic);
   }
 }

@@ -6,6 +6,10 @@ import de.arkadi.elasticsearch.model.Result;
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.ContentType;
 import org.apache.http.nio.entity.NStringEntity;
+import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
+import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
+import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
+import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.index.IndexRequest;
@@ -14,9 +18,12 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.xcontent.XContentFactory;
+import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
@@ -32,6 +39,7 @@ import static org.elasticsearch.cluster.metadata.IndexMetaData.SETTING_NUMBER_OF
 public class MessageRepository {
 
   private RestHighLevelClient client;
+  private static final Logger log = LoggerFactory.getLogger(MessageRepository.class);
 
   public MessageRepository(RestHighLevelClient client) {
 
@@ -107,39 +115,44 @@ public class MessageRepository {
               "message", m.getMessage());
   }
 
-  public void createMapping() throws IOException {
+  public void createIndex(String index) throws IOException {
 
-    Settings indexSettings = Settings.builder()
-      .put(SETTING_NUMBER_OF_SHARDS, 1)
-      .put(SETTING_NUMBER_OF_REPLICAS, 0)
-      .build();
+    CreateIndexRequest request = new CreateIndexRequest(index);
+    request.settings(Settings.builder()
+                       .put("index.number_of_shards", 3)
+                       .put("index.number_of_replicas", 2)
+    );
 
-    String payload = XContentFactory.jsonBuilder()
-      .startObject()
-      .startObject("settings")
-      .value(indexSettings)
-      .endObject()
-      .startObject("mappings")
-      .startObject("message")
-      .startObject("properties")
-      .startObject("message")
-      .field("type", "text")
-      .field("analyzer", "english")
-      .endObject()
-      .endObject()
-      .endObject()
-      .endObject()
-      .endObject()
-      .string();
+    request.mapping("mappings",
+                    "  {\n" +
+                    "    \"message\": {\n" +
+                    "      \"properties\": {\n" +
+                    "        \"id\": {\n" +
+                    "          \"type\": \"text\"\n" +
+                    "        }\n" +
+                    "        \"message\": {\n" +
+                    "          \"type\": \"text\"\n" +
+                    "           \"analyzer\": \"english\"\n" +
+                    "        }\n" +
+                    "      }\n" +
+                    "    }\n" +
+                    "  }",
+                    XContentType.JSON);
 
-    HttpEntity entity = new NStringEntity(payload, ContentType.APPLICATION_JSON);
-
-    client.getLowLevelClient()
-      .performRequest("PUT", "twitterindex", Collections.emptyMap(), entity);
-
+    CreateIndexResponse createIndexResponse = client.indices().create(request);
+    log.info("Created index : "
+             + createIndexResponse.index()
+             + " and all of the nodes have acknowledged the request : "
+             + createIndexResponse.isAcknowledged()
+             + ". The requisite number of shard copies were started for each shard in the index: "
+             + createIndexResponse.isShardsAcknowledged()
+    );
   }
 
-  public void dropIndex() {
+  public void dropIndex(String index) throws IOException {
 
+    DeleteIndexRequest request = new DeleteIndexRequest(index);
+    DeleteIndexResponse deleteIndexResponse = client.indices().delete(request);
+    log.info("Index is deleted properly :" + deleteIndexResponse.isAcknowledged());
   }
 }

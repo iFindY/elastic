@@ -4,15 +4,15 @@ import java.util.List;
 
 public class Result {
 
-  private List Result;
+  private List resultList;
 
   public Result(List result) {
 
-    Result = result;
+    resultList = result;
   }
 
   public List getResult() {
 
-    return Result;
+    return resultList;
   }
 }
