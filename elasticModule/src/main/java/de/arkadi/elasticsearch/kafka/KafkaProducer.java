@@ -28,6 +28,7 @@ public class KafkaProducer {
     }
   }
 
+  //TODO delete it
   public void send(Message result) {
 
     if (result != null) {

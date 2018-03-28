@@ -36,11 +36,8 @@ public class ElasticsearchConfig {
   @PostConstruct
   public void init() throws IOException {
 
-    //elasticsearchTemplate.deleteIndex(Message.class);
+    messageRepository().deleteIndex(inIndex);
     messageRepository().createIndex(inIndex);
-    //elasticsearchTemplate.putMapping(Message.class);
-    //elasticsearchTemplate.refresh(Message.class);
-    System.out.println("-----> elasticsearch mapping created <-----");
   }
 
   @Bean
@@ -52,7 +49,7 @@ public class ElasticsearchConfig {
   @Bean
   public MessageRepository messageRepository() {
 
-    return new MessageRepository(client());
+    return new MessageRepository(client(), inIndex);
   }
 
 }

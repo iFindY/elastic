@@ -9,14 +9,14 @@ buildscript { //
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-//all dependencies need to be on classpath when project is build. mit dem plugin
+        //all dependencies need to be on classpath when project is build. mit dem plugin
         //bill of materials,  wir müssen keine weiter information angeben über versionen alles was unten spring ist ist auf 1.5.10.RELEASE mit dem plugin gesetzt
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse' // import eclispe Tasks
-apply plugin: 'org.springframework.boot' //  gradle/task/applicatin/bootRun comand komt hier raus //bootRepackage baut  war,jar
+apply plugin: 'org.springframework.boot' //  gradle/task/applicatin/bootRun comand komtm hier raus //bootRepackage baut  war,jar
 apply plugin: 'war' // heir kommt der war Task
 
 //das ist ein task

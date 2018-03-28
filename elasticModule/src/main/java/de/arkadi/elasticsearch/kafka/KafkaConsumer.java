@@ -24,7 +24,6 @@ public class KafkaConsumer {
   @KafkaListener(topics = "${kafka.in.topic}", containerFactory = "kafkaListenerContainerFactory")
   public void store(Map<String, String> json) {
 
-    System.out.println("breakpoint");
     if (json.get("id") != null) {
       Message m = new Message(json.get("id"), json.get("text"));
       log.info("Elasticsearch received content = '{}'" + m);
