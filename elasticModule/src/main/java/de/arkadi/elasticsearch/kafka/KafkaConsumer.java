@@ -25,14 +25,15 @@ public class KafkaConsumer {
   public void store(Map<String, String> json) {
 
     if (json.get("id") != null) {
-      Message m = new Message(json.get("id"), json.get("text"));
+      Message m = new Message(json.get("id"), json.get("message"));
       log.info("Elasticsearch received content = '{}'" + m);
       messageService.save(m);
     }
-    else if (json.get("requestList") != null) {
-      Request r = new Request(json.get("requestList"));
-      log.info("Elasticsearch received query = '{}'" + r);
-      messageService.findMatch(r);
+    //TODO  redirect to cassandraTopic
+    else if (json.get("request") != null) {
+      Request text = new Request(json.get("request"));
+      log.info("Elasticsearch received query = '{}'" + text);
+      messageService.findMatch(text);
     }
     else {
       log.error("Incompatible Document : " + json);

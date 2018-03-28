@@ -4,6 +4,8 @@ import de.arkadi.elasticsearch.elasticsearch.repository.MessageRepository;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +20,8 @@ import java.io.IOException;
 @PropertySource("classpath:/application.properties")
 public class ElasticsearchConfig {
 
+  private static final Logger log = LoggerFactory.getLogger(ElasticsearchConfig.class);
+
   @Value("${elasticsearch.host}")
   private String EsHost;
 
@@ -27,17 +31,21 @@ public class ElasticsearchConfig {
   @Value("${elasticsearch.clustername}")
   private String EsClusterName;
 
-  @Value("${elasticsearch.in}")
+  @Value("${elasticsearch.index}")
   private String inIndex;
-
-  @Value("${elasticsearch.out}")
-  private String outIndex;
 
   @PostConstruct
   public void init() throws IOException {
 
-    messageRepository().deleteIndex(inIndex);
-    messageRepository().createIndex(inIndex);
+    try {
+      messageRepository().createIndex(inIndex);
+    }
+    catch (Exception e) {
+      messageRepository().deleteIndex(inIndex);
+      messageRepository().createIndex(inIndex);
+      log.warn(inIndex + " was recreated all data lost");
+    }
+
   }
 
   @Bean

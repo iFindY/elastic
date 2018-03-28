@@ -1,8 +1,10 @@
 package de.arkadi.elasticsearch.elasticsearch.repository;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import de.arkadi.elasticsearch.model.Message;
 import de.arkadi.elasticsearch.model.Request;
 import de.arkadi.elasticsearch.model.Result;
+import org.apache.http.HttpHeaders;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
@@ -15,18 +17,23 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.unit.Fuzziness;
+import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.MediaType;
+import org.springframework.web.client.RequestCallback;
+import org.springframework.web.client.RestTemplate;
 
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+
+import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
 //@Repository
 public class MessageRepository {
@@ -121,35 +128,31 @@ public class MessageRepository {
 
   public void createIndex(String index) throws IOException {
 
+    // RestTemplate restTemplate = new RestTemplate();
+
     CreateIndexRequest request = new CreateIndexRequest(index);
     request.settings(Settings.builder()
                        .put("index.number_of_shards", 3)
                        .put("index.number_of_replicas", 2)
     );
 
-    request.mapping("mappings",
-                    "  {\n" +
-                    "    \"doc\": {\n" +
-                    "      \"properties\": {\n" +
-                    "        \"id\": {\n" +
-                    "          \"docType\": \"text\"\n" +
-                    "        }\n" +
-                    "        \"message\": {\n" +
-                    "          \"docType\": \"text\"\n" +
-                    "           \"analyzer\": \"english\"\n" +
-                    "        }\n" +
-                    "      }\n" +
-                    "    }\n" +
-                    "  }",
-                    XContentType.JSON);
+    //request.mapping("{\"mappings\":{\"doc\":{\"properties\":{\"id\":{\"type\":\"text\"},\"message\":{\"type\":\"text\",\"analyzer\":\"english\"}}}}}", XContentType.JSON);
+    XContentBuilder builder = jsonBuilder().startObject()
+      .startObject("properties")
+      .startObject(idField).field("type", "text").endObject()
+      .startObject(textField).field("type", "text").field("analyzer", "english").endObject()
+      .endObject().endObject();
+
+    request.mapping(docType, builder);
 
     CreateIndexResponse createIndexResponse = client.indices().create(request);
-    log.info("Created index : "
+    log.info("\n Created index : "
              + createIndexResponse.index()
-             + " and all of the nodes have acknowledged the request : "
+             + "\n and all of the nodes have acknowledged the request : "
              + createIndexResponse.isAcknowledged()
-             + ". The requisite number of shard copies were started for each shard in the index: "
+             + ".\n The requisite number of shard copies were started for each shard in the index: "
              + createIndexResponse.isShardsAcknowledged()
+             + "\n"
     );
   }
 
@@ -159,4 +162,5 @@ public class MessageRepository {
     DeleteIndexResponse deleteIndexResponse = client.indices().delete(request);
     log.info("Index is deleted properly :" + deleteIndexResponse.isAcknowledged());
   }
+
 }

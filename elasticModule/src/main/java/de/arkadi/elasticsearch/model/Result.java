@@ -1,8 +1,9 @@
 package de.arkadi.elasticsearch.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Result {
+public class Result implements Serializable {
 
   private List resultList;
 
