@@ -1,4 +1,6 @@
 // alle tasks ---> https://docs.gradle.org/current/dsl/
+group = "elasticSearch"
+version = "1"
 
 buildscript { //
     ext {//properties for whole build
@@ -9,19 +11,17 @@ buildscript { //
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        //all dependencies need to be on classpath when project is build. mit dem plugin
-        //bill of materials,  wir müssen keine weiter information angeben über versionen alles was unten spring ist ist auf 1.5.10.RELEASE mit dem plugin gesetzt
     }
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse' // import eclispe Tasks
-apply plugin: 'org.springframework.boot' //  gradle/task/applicatin/bootRun comand komtm hier raus //bootRepackage baut  war,jar
-apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
 
 jar {
     manifest {
-        attributes 'Main-Class' : 'de.arkadi.elasticsearch.spring.Application'
+        attributes 'Main-Class': 'de.arkadi.elasticsearch.spring.Application'
     }
     version = 1.0
 }
@@ -31,10 +31,6 @@ configurations {
 }
 
 
-group 'elastic2018'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
@@ -42,10 +38,6 @@ repositories {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.kafka:spring-kafka')
-    //providedRuntime("org.springframework.boot:spring-boot-starter-tomcat") //exclude tomcat, geht auch ohne mit dem "configurations" task
-    compile group: 'org.twitter4j', name: 'twitter4j-core', version: '4.0.6'
-    compile group: 'org.twitter4j', name: 'twitter4j-stream', version: '4.0.6'
-    compile group: 'org.twitter4j', name: 'twitter4j-examples', version: '4.0.6'
     compile group: 'org.elasticsearch', name: 'elasticsearch', version: '6.2.3'
     compile group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: '6.2.3'
 }
