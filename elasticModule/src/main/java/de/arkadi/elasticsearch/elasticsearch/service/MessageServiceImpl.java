@@ -1,9 +1,9 @@
 package de.arkadi.elasticsearch.elasticsearch.service;
 
 import de.arkadi.elasticsearch.elasticsearch.repository.MessageRepository;
-import de.arkadi.elasticsearch.kafka.KafkaProducer;
-import de.arkadi.elasticsearch.model.Message;
-import de.arkadi.elasticsearch.model.Request;
+import de.arkadi.elasticsearch.kafka.KafkaProducerResult;
+import de.arkadi.elasticsearch.model.SaveDTO;
+import de.arkadi.elasticsearch.model.SearchDTO;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,16 +11,16 @@ import java.util.List;
 public class MessageServiceImpl implements MessageService {
 
   private MessageRepository messageRepository;
-  private KafkaProducer kafkaProducer;
+  private KafkaProducerResult kafkaProducer;
 
-  public MessageServiceImpl(MessageRepository messageRepository, KafkaProducer kafkaProducer) {
+  public MessageServiceImpl(MessageRepository messageRepository, KafkaProducerResult kafkaProducer) {
 
     this.messageRepository = messageRepository;
     this.kafkaProducer = kafkaProducer;
   }
 
   @Override
-  public void save(Message message) {
+  public void save(SaveDTO message) {
 
     try {
       messageRepository.save(message);
@@ -42,7 +42,7 @@ public class MessageServiceImpl implements MessageService {
   }
 
   @Override
-  public void saveAll(List<Message> messages) {
+  public void saveAll(List<SaveDTO> messages) {
 
     try {
       messageRepository.saveAll(messages);
@@ -64,7 +64,7 @@ public class MessageServiceImpl implements MessageService {
   }
 
   @Override
-  public void findMatch(Request message) {
+  public void findMatch(SearchDTO message) {
 
     try {
       kafkaProducer.send(messageRepository.findMatch(message));
@@ -75,7 +75,7 @@ public class MessageServiceImpl implements MessageService {
   }
 
   @Override
-  public List<Message> findAll() {
+  public List<SaveDTO> findAll() {
 
     try {
       return messageRepository.findAll();

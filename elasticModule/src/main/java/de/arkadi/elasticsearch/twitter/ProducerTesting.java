@@ -1,14 +1,9 @@
 package de.arkadi.elasticsearch.twitter;
 
-import de.arkadi.elasticsearch.kafka.KafkaProducer;
-import de.arkadi.elasticsearch.model.Message;
-import de.arkadi.elasticsearch.model.Request;
-import de.arkadi.elasticsearch.model.Result;
+import de.arkadi.elasticsearch.kafka.KafkaProducerResult;
+import de.arkadi.elasticsearch.model.SaveDTO;
 import twitter4j.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -16,9 +11,9 @@ public class ProducerTesting implements UserStreamListener {
 
   private final CountDownLatch latch = new CountDownLatch(3);
 
-  private final KafkaProducer kafkaProducer;
+  private final KafkaProducerResult kafkaProducer;
 
-  public ProducerTesting(KafkaProducer kafkaProducer) {
+  public ProducerTesting(KafkaProducerResult kafkaProducer) {
 
     this.kafkaProducer = kafkaProducer;
   }
@@ -27,8 +22,8 @@ public class ProducerTesting implements UserStreamListener {
 
     System.out.println("onStatus @" + status.getUser().getScreenName() + " - " + status.getText());
 
-    Message my = new Message(status.getId() + "", status.getText());
-    this.kafkaProducer.send(my);
+    //SaveDTO my = new SaveDTO(status.getId() + "", status.getText());
+    //this.kafkaProducer.send(my);
     try {
       latch.await(0, TimeUnit.SECONDS);
     }
@@ -61,7 +56,6 @@ public class ProducerTesting implements UserStreamListener {
 
   public void onFriendList(long[] friendIds) {
 
-    ;
   }
 
   public void onFavorite(User source, User target, Status favoritedStatus) {

@@ -1,6 +1,6 @@
 package de.arkadi.elasticsearch.twitter;
 
-import de.arkadi.elasticsearch.kafka.KafkaProducer;
+import de.arkadi.elasticsearch.kafka.KafkaProducerResult;
 import twitter4j.FilterQuery;
 import twitter4j.TwitterStream;
 import twitter4j.TwitterStreamFactory;
@@ -11,7 +11,7 @@ public class TwitterKafkaServiceTesting {
   private TwitterStream twitterStream;
 
   public TwitterKafkaServiceTesting(ConfigurationBuilder configuration,
-                                    KafkaProducer kafkaProducer) {
+                                    KafkaProducerResult kafkaProducer) {
 
     FilterQuery tweetFilterQuery = new FilterQuery();
     twitterStream = new TwitterStreamFactory(configuration.build()).getInstance();

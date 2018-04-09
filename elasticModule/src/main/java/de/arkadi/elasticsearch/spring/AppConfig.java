@@ -3,12 +3,12 @@ package de.arkadi.elasticsearch.spring;
 import de.arkadi.elasticsearch.elasticsearch.repository.MessageRepository;
 import de.arkadi.elasticsearch.elasticsearch.service.MessageService;
 import de.arkadi.elasticsearch.elasticsearch.service.MessageServiceImpl;
-import de.arkadi.elasticsearch.kafka.KafkaConsumer;
-import de.arkadi.elasticsearch.kafka.KafkaProducer;
-import de.arkadi.elasticsearch.model.Message;
-import de.arkadi.elasticsearch.model.Result;
-import de.arkadi.elasticsearch.twitter.TwitterKafkaServiceTesting;
-import org.springframework.beans.factory.annotation.Autowired;
+import de.arkadi.elasticsearch.kafka.KafkaConsumerDelete;
+import de.arkadi.elasticsearch.kafka.KafkaConsumerSave;
+import de.arkadi.elasticsearch.kafka.KafkaConsumerSearch;
+import de.arkadi.elasticsearch.kafka.KafkaProducerResult;
+import de.arkadi.elasticsearch.model.ResultDTO;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.kafka.core.KafkaTemplate;
-import twitter4j.conf.ConfigurationBuilder;
+
 
 @Configuration
 @EnableAutoConfiguration
@@ -24,75 +24,37 @@ import twitter4j.conf.ConfigurationBuilder;
 @Import({ KafkaConfig.class, ElasticsearchConfig.class })
 public class AppConfig {
 
-  @Value("${twitter.ConsumerKey}")
-  private String key;
-  @Value("${twitter.ConsumerSecret}")
-  private String keySecret;
-  @Value("${twitter.AccessToken}")
-  private String token;
-  @Value("${twitter.AccessTokenSecret}")
-  private String tokenSecret;
-  @Value("${kafka.out.topic}")
-  private String kafkaOutTopic;
-  @Value("${kafka.in.topic}")
-  private String kafkaInTopic;
-
-  @Autowired KafkaTemplate<String, Result> kafkaTemplate;
-  @Autowired KafkaTemplate<String, Message> kafkaTemplateTest;
-  @Autowired MessageRepository messageRepository;
-
-  /**
-   * Getting Twitter data
-   */
   @Bean
-  public TwitterKafkaServiceTesting TwitterKafkaStreamService() {
+  public KafkaProducerResult kafkaProducer(KafkaTemplate<String, ResultDTO> kafkaTemplate,
+                                           @Value("${kafka.out.cassandra.topic}")
+                                             String kafkaOutTopic) {
 
-    ConfigurationBuilder configuration = new ConfigurationBuilder();
-    configuration.setDebugEnabled(true)
-      .setOAuthConsumerKey(key)
-      .setOAuthConsumerSecret(keySecret)
-      .setOAuthAccessToken(token)
-      .setOAuthAccessTokenSecret(tokenSecret);
-
-    return new TwitterKafkaServiceTesting(configuration, kafkaProducerTest());
+    return new KafkaProducerResult(kafkaTemplate, kafkaOutTopic);
   }
 
-  /**
-   * create a producer which will push data to topic. It uses a spring template and a kafka address.
-   */
   @Bean
-  public KafkaProducer kafkaProducer() {
+  public KafkaConsumerSave kafkaConsumerSave(MessageService messageService) {
 
-    return new KafkaProducer(kafkaTemplate, kafkaOutTopic);
+    return new KafkaConsumerSave(messageService);
   }
 
-  /**
-   * consume messages to store or  search requests to answer
-   */
   @Bean
-  public KafkaConsumer kafkaConsumer() {
+  public KafkaConsumerDelete kafkaConsumerDelete(MessageService messageService) {
 
-    return new KafkaConsumer(messageService());
+    return new KafkaConsumerDelete(messageService);
   }
 
-  /**
-   * it create a Service which communicants with Elasticsearch.
-   * read/write Service.
-   * it takes an elasticsearch and an kafka connector.
-   */
   @Bean
-  public MessageService messageService() {
+  public KafkaConsumerSearch kafkaConsumerSearch(MessageService messageService,
+                                                 KafkaProducerResult kafkaProducerResult) {
 
-    return new MessageServiceImpl(messageRepository, kafkaProducer());
+    return new KafkaConsumerSearch(messageService, kafkaProducerResult);
   }
 
-  //-------Test area----------//
+  @Bean
+  public MessageService messageService(MessageRepository messageRepository,
+                                       KafkaProducerResult kafkaProducer) {
 
-  /**
-   * read out twitter and  push it  to kafka
-   */
-  @Bean KafkaProducer kafkaProducerTest() {
-
-    return new KafkaProducer(kafkaTemplate, kafkaInTopic);
+    return new MessageServiceImpl(messageRepository, kafkaProducer);
   }
 }

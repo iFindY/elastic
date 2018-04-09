@@ -1,16 +1,15 @@
 package de.arkadi.elasticsearch.elasticsearch.repository;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import de.arkadi.elasticsearch.model.Message;
-import de.arkadi.elasticsearch.model.Request;
-import de.arkadi.elasticsearch.model.Result;
-import org.apache.http.HttpHeaders;
+import de.arkadi.elasticsearch.model.SaveDTO;
+import de.arkadi.elasticsearch.model.SearchDTO;
+import de.arkadi.elasticsearch.model.ResultDTO;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.delete.DeleteRequest;
+import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
@@ -18,15 +17,11 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.xcontent.XContentBuilder;
-import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.MediaType;
-import org.springframework.web.client.RequestCallback;
-import org.springframework.web.client.RestTemplate;
 
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
@@ -51,7 +46,7 @@ public class MessageRepository {
     this.index = index;
   }
 
-  public void save(Message message) throws IOException {
+  public void save(SaveDTO message) throws IOException {
 
     IndexRequest indexRequest =
       new IndexRequest(index, docType, message.getId())
@@ -71,7 +66,7 @@ public class MessageRepository {
     log.info("save status " + client.index(indexRequest).status().toString());
   }
 
-  public void saveAll(List<Message> messages) throws IOException {
+  public void saveAll(List<SaveDTO> messages) throws IOException {
 
     BulkRequest bulkRequest = new BulkRequest();
     messages.stream().map(this::assembleIndexRequest).forEach(bulkRequest::add);
@@ -82,11 +77,11 @@ public class MessageRepository {
   public void deleteById(String id) throws IOException {
 
     DeleteRequest request = new DeleteRequest(index, docType, id);
-
-    log.info("deleteById status :" + client.delete(request).status().toString());
+    DeleteResponse deleteResponse = client.delete(request);
+    log.info("deleteById status :" + deleteResponse.status().toString());
   }
 
-  public Result findMatch(Request message) throws IOException {
+  public ResultDTO findMatch(SearchDTO message) throws IOException {
 
     SearchRequest searchRequest = new SearchRequest(index);
     SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
@@ -100,12 +95,12 @@ public class MessageRepository {
     SearchResponse response = client.search(searchRequest);
     log.info("findMatch status :" + response.status().toString());
 
-    return new Result(Arrays.stream((response).getHits().getHits())
+    return new ResultDTO(Arrays.stream((response).getHits().getHits())
                         .map(hit -> hit.getSourceAsMap().get(idField).toString())
                         .collect(Collectors.toList()));
   }
 
-  public List<Message> findAll() throws IOException {
+  public List<SaveDTO> findAll() throws IOException {
 
     SearchRequest searchRequest = new SearchRequest(index);
     SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
@@ -115,11 +110,11 @@ public class MessageRepository {
     log.info("findAll status :" + response.status().toString());
 
     return Arrays.stream(response.getHits().getHits())
-      .map(hit -> new Message(hit.field("id").toString(), hit.field(docType).toString()))
+      .map(hit -> new SaveDTO(hit.field("id").toString(), hit.field(docType).toString()))
       .collect(Collectors.toList());
   }
 
-  private IndexRequest assembleIndexRequest(@NotNull Message m) {
+  private IndexRequest assembleIndexRequest(@NotNull SaveDTO m) {
 
     return new IndexRequest(index, docType, m.getId())
       .source("id", m.getId(),
@@ -128,16 +123,14 @@ public class MessageRepository {
 
   public void createIndex(String index) throws IOException {
 
-    // RestTemplate restTemplate = new RestTemplate();
-
     CreateIndexRequest request = new CreateIndexRequest(index);
     request.settings(Settings.builder()
                        .put("index.number_of_shards", 3)
-                       .put("index.number_of_replicas", 2)
+                       .put("index.number_of_replicas", 1)
     );
 
     //request.mapping("{\"mappings\":{\"doc\":{\"properties\":{\"id\":{\"type\":\"text\"},\"message\":{\"type\":\"text\",\"analyzer\":\"english\"}}}}}", XContentType.JSON);
-    XContentBuilder builder = jsonBuilder().startObject()
+     XContentBuilder builder = jsonBuilder().startObject()
       .startObject("properties")
       .startObject(idField).field("type", "text").endObject()
       .startObject(textField).field("type", "text").field("analyzer", "english").endObject()

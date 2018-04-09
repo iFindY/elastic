@@ -17,21 +17,19 @@ buildscript { //
 apply plugin: 'java'
 apply plugin: 'eclipse' // import eclispe Tasks
 apply plugin: 'org.springframework.boot' //  gradle/task/applicatin/bootRun comand komtm hier raus //bootRepackage baut  war,jar
-apply plugin: 'war' // heir kommt der war Task
+apply plugin: 'application'
 
-//das ist ein task
-war {//war for jboss deploy
-    baseName = 'arkadiWar'
-    version = '1.0'
+jar {
+    manifest {
+        attributes 'Main-Class' : 'de.arkadi.elasticsearch.spring.Application'
+    }
+    version = 1.0
 }
 
 configurations {
     providedRuntime
 }
-/*jar {
-    baseName = 'arkadiJar'
-    version = '1.0'
-}*/
+
 
 group 'elastic2018'
 version = '0.0.1-SNAPSHOT'
@@ -40,7 +38,6 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
 }
-
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')

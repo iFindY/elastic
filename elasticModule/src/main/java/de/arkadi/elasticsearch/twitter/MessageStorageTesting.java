@@ -1,20 +1,20 @@
 package de.arkadi.elasticsearch.twitter;
 
-import de.arkadi.elasticsearch.model.Message;
+import de.arkadi.elasticsearch.model.SaveDTO;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MessageStorageTesting {
 
-    private List<Message> storage = new ArrayList<>();
+    private List<SaveDTO> storage = new ArrayList<>();
 
     public void count(){
 
         System.out.println(storage.size());
     }
 
-    public void put(Message message) {
+    public void put(SaveDTO message) {
         storage.add( message );
         System.out.println(message.toString());
     }

@@ -1,7 +1,7 @@
 package de.arkadi.elasticsearch.restController;
 
 import de.arkadi.elasticsearch.elasticsearch.service.MessageService;
-import de.arkadi.elasticsearch.model.Message;
+import de.arkadi.elasticsearch.model.SaveDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,21 +28,21 @@ public class WebRestController {
   }
 
   @GetMapping(value = "/postMessage")
-  public void storeMessage(@RequestParam("data") Message data) {
+  public void storeMessage(@RequestParam("data") SaveDTO data) {
 
     messageService.save(data);
 
   }
 
   @GetMapping(value = "/getAll")
-  public List<Message> getAllMessage() {
+  public List<SaveDTO> getAllMessage() {
 
     return messageService.findAll();
 
   }
 
 /*  @GetMapping(value = "/getMatch")
-  public Result getMatchMessage( Request message) {
+  public ResultDTO getMatchMessage( SearchDTO message) {
 
     return messageService.findMatch(message);
   }*/

@@ -7,9 +7,7 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
@@ -27,9 +25,6 @@ public class ElasticsearchConfig {
 
   @Value("${elasticsearch.port}")
   private int EsPort;
-
-  @Value("${elasticsearch.clustername}")
-  private String EsClusterName;
 
   @Value("${elasticsearch.index}")
   private String inIndex;

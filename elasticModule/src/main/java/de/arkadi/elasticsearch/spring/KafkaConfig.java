@@ -1,7 +1,7 @@
 package de.arkadi.elasticsearch.spring;
 
-import de.arkadi.elasticsearch.model.Message;
-import de.arkadi.elasticsearch.model.Result;
+import de.arkadi.elasticsearch.model.SaveDTO;
+import de.arkadi.elasticsearch.model.ResultDTO;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -57,13 +57,13 @@ public class KafkaConfig {
   }
 
   @Bean
-  public ProducerFactory<String, Result> producerFactory() {
+  public ProducerFactory<String, ResultDTO> producerFactory() {
 
     return new DefaultKafkaProducerFactory<>(producerConfigs());
   }
 
   @Bean
-  public KafkaTemplate<String, Result> kafkaTemplate() {
+  public KafkaTemplate<String, ResultDTO> kafkaTemplate() {
 
     return new KafkaTemplate<>(producerFactory());
   }
@@ -77,16 +77,4 @@ public class KafkaConfig {
     return factory;
   }
 
-  //-----------------Test area ---------------//
-  @Bean
-  public ProducerFactory<String, Message> producerFactoryTest() {
-
-    return new DefaultKafkaProducerFactory<>(producerConfigs());
-  }
-
-  @Bean
-  public KafkaTemplate<String, Message> kafkaTemplateTest() {
-
-    return new KafkaTemplate<>(producerFactoryTest());
-  }
 }
