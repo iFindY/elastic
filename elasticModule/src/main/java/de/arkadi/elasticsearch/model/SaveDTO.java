@@ -3,12 +3,12 @@ package de.arkadi.elasticsearch.model;
 public class SaveDTO {
 
   private String id;
-  private String message;
+  private String text;
 
   public SaveDTO(String id, String message) {
 
     this.id = id;
-    this.message = message;
+    this.text = message;
   }
 
   public String getId() {
@@ -21,19 +21,19 @@ public class SaveDTO {
     this.id = id;
   }
 
-  public String getMessage() {
+  public String getText() {
 
-    return message;
+    return text;
   }
 
-  public void setMessage(String message) {
+  public void setText(String text) {
 
-    this.message = message;
+    this.text = text;
   }
 
   @Override
   public String toString() {
 
-    return id + "\n " + message + "\n";
+    return id + "\n " + text + "\n";
   }
 }

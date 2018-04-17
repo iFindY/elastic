@@ -51,7 +51,7 @@ public class MessageRepository {
     IndexRequest indexRequest =
       new IndexRequest(index, docType, message.getId())
         .source(idField, message.getId(),
-                textField, message.getMessage());
+                textField, message.getText());
 
     log.info("save status " + client.index(indexRequest).status().toString());
   }
@@ -118,7 +118,7 @@ public class MessageRepository {
 
     return new IndexRequest(index, docType, m.getId())
       .source("id", m.getId(),
-              docType, m.getMessage());
+              docType, m.getText());
   }
 
   public void createIndex(String index) throws IOException {

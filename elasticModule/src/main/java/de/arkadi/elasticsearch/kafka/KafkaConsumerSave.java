@@ -20,7 +20,7 @@ public class KafkaConsumerSave {
   @KafkaListener(topics = "${kafka.in.save.topic}", containerFactory = "kafkaListenerContainerFactory")
   public void save(SaveDTO dto) {
 
-    log.info("Elasticsearch received content = '{}'" + dto.getMessage());
+    log.info("Elasticsearch received content = '{}'" + dto.getText());
     messageService.save(dto);
   }
 }
