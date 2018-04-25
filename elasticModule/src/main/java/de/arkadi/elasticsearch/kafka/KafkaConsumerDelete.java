@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 
+import java.util.HashMap;
+
 public class KafkaConsumerDelete {
 
   private static final Logger log = LoggerFactory.getLogger(KafkaProducerResult.class);
@@ -17,7 +19,7 @@ public class KafkaConsumerDelete {
 
   }
 
-  @KafkaListener(topics = "${kafka.in.delete.topic}", containerFactory = "kafkaListenerContainerFactory")
+  @KafkaListener(topics = "${kafka.in.delete.topic}", containerFactory = "kafkaListenerContainerFactoryDelete")
   public void delete(DeleteDTO dto) {
 
     String id = dto.getId();

@@ -1,8 +1,8 @@
 package de.arkadi.elasticsearch.elasticsearch.service;
 
+import de.arkadi.elasticsearch.model.RequestDTO;
 import de.arkadi.elasticsearch.model.ResultDTO;
 import de.arkadi.elasticsearch.model.SaveDTO;
-import de.arkadi.elasticsearch.model.SearchDTO;
 
 import java.util.List;
 
@@ -16,8 +16,8 @@ public interface MessageService {
 
   void deleteById(String id);
 
-  void findMatch(SearchDTO message);
+  void findMatch(RequestDTO message);
 
-  List<SaveDTO> findAll();
+  ResultDTO findAll();
 
 }

@@ -1,8 +1,8 @@
 package de.arkadi.elasticsearch.elasticsearch.repository;
 
-import de.arkadi.elasticsearch.model.SaveDTO;
-import de.arkadi.elasticsearch.model.SearchDTO;
+import de.arkadi.elasticsearch.model.RequestDTO;
 import de.arkadi.elasticsearch.model.ResultDTO;
+import de.arkadi.elasticsearch.model.SaveDTO;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
@@ -23,6 +23,7 @@ import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.PostConstruct;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.util.*;
@@ -30,20 +31,40 @@ import java.util.stream.Collectors;
 
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
-//@Repository
 public class MessageRepository {
 
   private static final Logger log = LoggerFactory.getLogger(MessageRepository.class);
   private RestHighLevelClient client;
+  private String settings;
+  private String mapping;
   private String index;
   private final String docType = "doc";
   private final String textField = "message";
   private final String idField = "id";
 
-  public MessageRepository(RestHighLevelClient client, String index) {
+  public MessageRepository(RestHighLevelClient client,
+                           String index,
+                           String settings,
+                           String mapping) {
 
     this.client = client;
     this.index = index;
+    this.settings = settings;
+    this.mapping = mapping;
+  }
+
+  @PostConstruct
+  public void init() throws IOException {
+
+    try {
+      createIndex(index);
+    }
+    catch (Exception e) {
+      deleteIndex(index);
+      createIndex(index);
+      log.warn("Index '{}' was recreated all data lost", index);
+    }
+
   }
 
   public void save(SaveDTO message) throws IOException {
@@ -63,7 +84,10 @@ public class MessageRepository {
         .source(idField, id,
                 textField, message);
 
-    log.info("save status " + client.index(indexRequest).status().toString());
+    log.info("Text {} saved '{}' under id {} ",
+             message,
+             client.index(indexRequest).status().toString(),
+             id);
   }
 
   public void saveAll(List<SaveDTO> messages) throws IOException {
@@ -78,14 +102,14 @@ public class MessageRepository {
 
     DeleteRequest request = new DeleteRequest(index, docType, id);
     DeleteResponse deleteResponse = client.delete(request);
-    log.info("deleteById status :" + deleteResponse.status().toString());
+    log.info("Text with '{}' deleted :'{}'", id, deleteResponse.status().toString());
   }
 
-  public ResultDTO findMatch(SearchDTO message) throws IOException {
+  public ResultDTO findMatch(RequestDTO message) throws IOException {
 
     SearchRequest searchRequest = new SearchRequest(index);
     SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-    MatchQueryBuilder matchQueryBuilder = new MatchQueryBuilder(textField, message.getRequest())
+    MatchQueryBuilder matchQueryBuilder = new MatchQueryBuilder(textField, message.getText())
       .fuzziness(Fuzziness.AUTO)
       .prefixLength(3)
       .maxExpansions(5);
@@ -93,14 +117,18 @@ public class MessageRepository {
     searchSourceBuilder.query(matchQueryBuilder);
     searchRequest.source(searchSourceBuilder);
     SearchResponse response = client.search(searchRequest);
-    log.info("findMatch status :" + response.status().toString());
+    log.info("findMatch status :'{}'", response.status().toString());
 
-    return new ResultDTO(Arrays.stream((response).getHits().getHits())
-                        .map(hit -> hit.getSourceAsMap().get(idField).toString())
-                        .collect(Collectors.toList()));
+    List<String> resultList = Arrays.stream((response).getHits().getHits())
+      .map(hit -> hit.getSourceAsMap().get(idField).toString())
+      .collect(Collectors.toList());
+
+    return new ResultDTO(resultList,
+                         message.getRequest_id(),
+                         message.getAnswer_partition());
   }
 
-  public List<SaveDTO> findAll() throws IOException {
+  public ResultDTO findAll() throws IOException {
 
     SearchRequest searchRequest = new SearchRequest(index);
     SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
@@ -109,9 +137,11 @@ public class MessageRepository {
     SearchResponse response = client.search(searchRequest);
     log.info("findAll status :" + response.status().toString());
 
-    return Arrays.stream(response.getHits().getHits())
-      .map(hit -> new SaveDTO(hit.field("id").toString(), hit.field(docType).toString()))
+    List<String> result = Arrays.stream(response.getHits().getHits())
+      .map(hit -> hit.field("text").toString())
       .collect(Collectors.toList());
+
+    return new ResultDTO(result);
   }
 
   private IndexRequest assembleIndexRequest(@NotNull SaveDTO m) {
@@ -124,28 +154,36 @@ public class MessageRepository {
   public void createIndex(String index) throws IOException {
 
     CreateIndexRequest request = new CreateIndexRequest(index);
+    //request.settings(settings, XContentType.JSON);
+    //request.mapping(docType, mapping, XContentType.JSON);
+
     request.settings(Settings.builder()
-                       .put("index.number_of_shards", 3)
-                       .put("index.number_of_replicas", 1)
-    );
-
+                       .put("index.number_of_shards", 5)
+                       .put("index.number_of_replicas", 0)
+                       .put("refresh_interval", "5s"));
     //request.mapping("{\"mappings\":{\"doc\":{\"properties\":{\"id\":{\"type\":\"text\"},\"message\":{\"type\":\"text\",\"analyzer\":\"english\"}}}}}", XContentType.JSON);
-     XContentBuilder builder = jsonBuilder().startObject()
+    XContentBuilder builder = jsonBuilder().startObject()
       .startObject("properties")
-      .startObject(idField).field("type", "text").endObject()
-      .startObject(textField).field("type", "text").field("analyzer", "english").endObject()
-      .endObject().endObject();
-
+      .startObject(idField)
+      .field("type", "text")
+      .endObject()
+      .startObject(textField)
+      .field("type", "text")
+      .field("analyzer", "english")
+      .field("store", "false")
+      .endObject()
+      .endObject()
+      .endObject();
     request.mapping(docType, builder);
 
     CreateIndexResponse createIndexResponse = client.indices().create(request);
-    log.info("\n Created index : "
-             + createIndexResponse.index()
-             + "\n and all of the nodes have acknowledged the request : "
-             + createIndexResponse.isAcknowledged()
-             + ".\n The requisite number of shard copies were started for each shard in the index: "
-             + createIndexResponse.isShardsAcknowledged()
-             + "\n"
+    log.info(
+      "\nCreated '{}' index "
+      + "\nAll of the nodes have acknowledged the request: '{}'"
+      + "\nThe requisite number of shard copies were started for each shard in the index: '{}'",
+      createIndexResponse.index(),
+      createIndexResponse.isAcknowledged(),
+      createIndexResponse.isShardsAcknowledged()
     );
   }
 
@@ -153,7 +191,7 @@ public class MessageRepository {
 
     DeleteIndexRequest request = new DeleteIndexRequest(index);
     DeleteIndexResponse deleteIndexResponse = client.indices().delete(request);
-    log.info("Index is deleted properly :" + deleteIndexResponse.isAcknowledged());
+    log.info("Index '{}' is deleted properly :'{}'", index, deleteIndexResponse.isAcknowledged());
   }
 
 }

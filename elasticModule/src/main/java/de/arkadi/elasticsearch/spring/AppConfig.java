@@ -11,15 +11,15 @@ import de.arkadi.elasticsearch.model.ResultDTO;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.kafka.core.KafkaTemplate;
 
-
 @Configuration
-@EnableAutoConfiguration
+@EnableAutoConfiguration(exclude = KafkaAutoConfiguration.class)
 @PropertySource("classpath:/application.properties")
 @Import({ KafkaConfig.class, ElasticsearchConfig.class })
 public class AppConfig {
@@ -45,10 +45,9 @@ public class AppConfig {
   }
 
   @Bean
-  public KafkaConsumerSearch kafkaConsumerSearch(MessageService messageService,
-                                                 KafkaProducerResult kafkaProducerResult) {
+  public KafkaConsumerSearch kafkaConsumerSearch(MessageService messageService) {
 
-    return new KafkaConsumerSearch(messageService, kafkaProducerResult);
+    return new KafkaConsumerSearch(messageService);
   }
 
   @Bean

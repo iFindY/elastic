@@ -17,19 +17,22 @@ buildscript { //
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 
+springBoot {
+    executable = true
+}
 sourceCompatibility = 1.8
 
 jar {
     manifest {
-        attributes 'Main-Class': 'de.arkadi.elasticsearch.spring.Application'
+        attributes "Main-Class": "de.arkadi.elasticsearch.spring.Application"
     }
+    archiveName = "ElasticsearchService.jar"
     version = 1.0
 }
 
 configurations {
     providedRuntime
 }
-
 
 repositories {
     mavenCentral()
@@ -40,4 +43,5 @@ dependencies {
     compile('org.springframework.kafka:spring-kafka')
     compile group: 'org.elasticsearch', name: 'elasticsearch', version: '6.2.3'
     compile group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: '6.2.3'
+
 }

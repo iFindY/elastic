@@ -1,42 +1,50 @@
 package de.arkadi.elasticsearch.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.util.List;
 
 public class ResultDTO implements Serializable {
 
-  private String request_id;
-  private String answer_partition;
+  @JsonProperty("request_id")
+  private Integer requestId;
+  @JsonProperty("answer_partition")
+  private Integer answerPartition;
+  @JsonProperty("tweet_id_list")
   private List resultList;
 
-  public ResultDTO(List result) {
+  public ResultDTO(List resultList, Integer requestId, Integer answerPartition) {
 
-    resultList = result;
+    this.resultList = resultList;
+    this.requestId = requestId;
+    this.answerPartition = answerPartition;
+
   }
 
-  public List getResult() {
+  public ResultDTO(List resultList) {
 
-    return resultList;
+    this.resultList = resultList;
   }
 
-  public String getRequest_id() {
+  public Integer getRequestId() {
 
-    return request_id;
+    return requestId;
   }
 
-  public void setRequest_id(String request_id) {
+  public void setRequestId(Integer requestId) {
 
-    this.request_id = request_id;
+    this.requestId = requestId;
   }
 
-  public String getAnswer_partition() {
+  public Integer getAnswerPartition() {
 
-    return answer_partition;
+    return answerPartition;
   }
 
-  public void setAnswer_partition(String answer_partition) {
+  public void setAnswerPartition(Integer answerPartition) {
 
-    this.answer_partition = answer_partition;
+    this.answerPartition = answerPartition;
   }
 
   public List getResultList() {

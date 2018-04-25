@@ -5,12 +5,6 @@ public class SaveDTO {
   private String id;
   private String text;
 
-  public SaveDTO(String id, String message) {
-
-    this.id = id;
-    this.text = message;
-  }
-
   public String getId() {
 
     return id;
@@ -34,6 +28,6 @@ public class SaveDTO {
   @Override
   public String toString() {
 
-    return id + "\n " + text + "\n";
+    return "person: " + id + " message: " + text;
   }
 }

@@ -4,9 +4,13 @@ import de.arkadi.elasticsearch.elasticsearch.service.MessageService;
 import de.arkadi.elasticsearch.model.SaveDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 
 public class KafkaConsumerSave {
+
+  @Autowired
+
 
   private static final Logger log = LoggerFactory.getLogger(KafkaProducerResult.class);
   private MessageService messageService;
@@ -16,11 +20,10 @@ public class KafkaConsumerSave {
     this.messageService = messageService;
 
   }
+  @KafkaListener(topics = "${kafka.in.save.topic}",containerFactory = "kafkaListenerContainerFactorySave")
+  public void save(SaveDTO saveDTO) {
 
-  @KafkaListener(topics = "${kafka.in.save.topic}", containerFactory = "kafkaListenerContainerFactory")
-  public void save(SaveDTO dto) {
-
-    log.info("Elasticsearch received content = '{}'" + dto.getText());
-    messageService.save(dto);
+    log.info("Elasticsearch received content='{}'", saveDTO.toString());
+    messageService.save(saveDTO);
   }
 }

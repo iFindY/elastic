@@ -1,9 +1,12 @@
 package de.arkadi.elasticsearch.model;
 
-//TODO insert project specific data
 public class DeleteDTO {
 
   private String id;
+
+  public DeleteDTO() {
+
+  }
 
   public DeleteDTO(String id) {
 

@@ -7,12 +7,16 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.io.Resource;
 
-import javax.annotation.PostConstruct;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.stream.Collectors;
 
 @Configuration
 @PropertySource("classpath:/application.properties")
@@ -29,19 +33,11 @@ public class ElasticsearchConfig {
   @Value("${elasticsearch.index}")
   private String inIndex;
 
-  @PostConstruct
-  public void init() throws IOException {
+  @Value("${elasticsearch.settings.path}")
+  String settings;
 
-    try {
-      messageRepository().createIndex(inIndex);
-    }
-    catch (Exception e) {
-      messageRepository().deleteIndex(inIndex);
-      messageRepository().createIndex(inIndex);
-      log.warn(inIndex + " was recreated all data lost");
-    }
-
-  }
+  @Value("${elasticsearch.mapping.path}")
+  String mappings;
 
   @Bean
   public RestHighLevelClient client() {
@@ -50,9 +46,24 @@ public class ElasticsearchConfig {
   }
 
   @Bean
-  public MessageRepository messageRepository() {
+  public MessageRepository messageRepository(ApplicationContext context) {
 
-    return new MessageRepository(client(), inIndex);
+    String settings = null;
+    String mappings = null;
+    Resource resourceS = context.getResource("classpath:" + this.settings);
+    Resource resourceM = context.getResource("classpath:" + this.mappings);
+
+    try {
+      settings = new BufferedReader(new InputStreamReader(resourceS.getInputStream())).lines()
+        .collect(Collectors.joining("\n"));
+      mappings = new BufferedReader(new InputStreamReader(resourceM.getInputStream())).lines()
+        .collect(Collectors.joining("\n"));
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    return new MessageRepository(client(), inIndex, settings, mappings);
   }
 
 }

@@ -1,7 +1,9 @@
 package de.arkadi.elasticsearch.spring;
 
-import de.arkadi.elasticsearch.model.SaveDTO;
+import de.arkadi.elasticsearch.model.DeleteDTO;
+import de.arkadi.elasticsearch.model.RequestDTO;
 import de.arkadi.elasticsearch.model.ResultDTO;
+import de.arkadi.elasticsearch.model.SaveDTO;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
@@ -18,13 +21,14 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 import java.util.HashMap;
 import java.util.Map;
 
+@EnableKafka
 @Configuration
 @PropertySource("classpath:/application.properties")
 public class KafkaConfig {
 
   @Value("${kafka.bootstrap-servers}")
   private String bootstrap;
-  @Value("${kafka.consumer.group-id}")
+  @Value("${kafka.consumer.group.id}")
   private String groupId;
 
   @Bean
@@ -49,11 +53,27 @@ public class KafkaConfig {
   }
 
   @Bean
-  public ConsumerFactory<String, Map> consumerFactory() {
+  public ConsumerFactory<String, SaveDTO> consumerFactorySave() {
 
     return new DefaultKafkaConsumerFactory<>(consumerConfig(),
                                              new StringDeserializer(),
-                                             new JsonDeserializer<>(Map.class));
+                                             new JsonDeserializer<>(SaveDTO.class));
+  }
+
+  @Bean
+  public ConsumerFactory<String, RequestDTO> consumerFactoryRequest() {
+
+    return new DefaultKafkaConsumerFactory<>(consumerConfig(),
+                                             new StringDeserializer(),
+                                             new JsonDeserializer<>(RequestDTO.class));
+  }
+
+  @Bean
+  public ConsumerFactory<String, DeleteDTO> consumerFactoryDelete() {
+
+    return new DefaultKafkaConsumerFactory<>(consumerConfig(),
+                                             new StringDeserializer(),
+                                             new JsonDeserializer<>(DeleteDTO.class));
   }
 
   @Bean
@@ -69,10 +89,28 @@ public class KafkaConfig {
   }
 
   @Bean
-  public ConcurrentKafkaListenerContainerFactory<String, Map> kafkaListenerContainerFactory() {
+  public ConcurrentKafkaListenerContainerFactory<String, SaveDTO> kafkaListenerContainerFactorySave() {
 
-    ConcurrentKafkaListenerContainerFactory<String, Map> factory = new ConcurrentKafkaListenerContainerFactory<>();
-    factory.setConsumerFactory(consumerFactory());
+    ConcurrentKafkaListenerContainerFactory<String, SaveDTO> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    factory.setConsumerFactory(consumerFactorySave());
+
+    return factory;
+  }
+
+  @Bean
+  public ConcurrentKafkaListenerContainerFactory<String, RequestDTO> kafkaListenerContainerFactoryRequest() {
+
+    ConcurrentKafkaListenerContainerFactory<String, RequestDTO> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    factory.setConsumerFactory(consumerFactoryRequest());
+
+    return factory;
+  }
+
+  @Bean
+  public ConcurrentKafkaListenerContainerFactory<String, DeleteDTO> kafkaListenerContainerFactoryDelete() {
+
+    ConcurrentKafkaListenerContainerFactory<String, DeleteDTO> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    factory.setConsumerFactory(consumerFactoryDelete());
 
     return factory;
   }
