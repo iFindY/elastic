@@ -22,6 +22,8 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 
 import javax.annotation.PostConstruct;
 import javax.validation.constraints.NotNull;
@@ -38,9 +40,10 @@ public class MessageRepository {
   private String settings;
   private String mapping;
   private String index;
-  private final String docType = "doc";
+  private final String docType = "_doc";
   private final String textField = "message";
   private final String idField = "id";
+  private boolean dev = false;
 
   public MessageRepository(RestHighLevelClient client,
                            String index,
@@ -60,9 +63,12 @@ public class MessageRepository {
       createIndex(index);
     }
     catch (Exception e) {
-      deleteIndex(index);
-      createIndex(index);
-      log.warn("Index '{}' was recreated all data lost", index);
+      log.warn("Index '{}' exists", index);
+      if (dev) {
+        deleteIndex(index);
+        createIndex(index);
+        log.warn("Index '{}' was recreated all data lost", index);
+      }
     }
 
   }
