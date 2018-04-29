@@ -1,17 +1,18 @@
 {
-  "mappings": {
+  "dynamic": false,
+  "properties": {
+    "id": {
+      "type": "keyword",
+      "index": false
+    },
     "message": {
-      "properties": {
-        "id": {
-          "type": "text"
-        },
-        "message": {
-          "type": "text",
-          "index":"analyzed",
-          "store":"false",
-          "analyzer": "english"
-        }
-      }
+      "type": "text",
+      "index": true,
+      "analyzer": "my_analyzer"
+    },
+    "tags": {
+      "type": "keyword",
+      "null_value": "no tags"
     }
   }
 }

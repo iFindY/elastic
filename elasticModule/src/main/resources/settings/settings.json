@@ -1,19 +1,38 @@
+
+
 {
   "settings": {
-    "refresh_interval": "10s",
+    "refresh_interval": "1s",
     "number_of_shards": "5",
     "number_of_replicas": "0",
     "analysis": {
+      "analyzer": {
+        "my_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "my_tokenizer",
+            "lowercase",
+            "my_stemmer",
+            "english_possessive_stemmer",
+            "my_stop"
+          ]
+        }
+      },
       "filter": {
-        "english_stop": {
-          "type":       "stop",
-          "stopwords":  "_english_"
+        "my_stop": {
+          "type": "stop",
+          "stopwords": "_english_"
         },
-        "english_keywords": {
-          "type":       "keyword_marker",
-          "keywords":   ["and","or","see"]
+        "my_tokenizer":{
+          "type" : "word_delimiter",
+          "split_on_numerics" : true,
+          "split_on_case_change" : true,
+          "generate_word_parts" : true,
+          "generate_number_parts" : true,
+          "catenate_all" : false
         },
-        "english_stemmer": {
+        "my_stemmer": {
           "type": "stemmer",
           "language": "english"
         },
@@ -21,22 +40,7 @@
           "type": "stemmer",
           "language": "possessive_english"
         }
-      },
-      "analyzer": {
-        "english": {
-          "tokenizer": "standard",
-          "filter": [
-            "english_possessive_stemmer",
-            "lowercase",
-            "english_stop",
-            "english_keywords",
-            "english_stemmer"
-          ]
-        }
       }
     }
   }
 }
-
-
-
