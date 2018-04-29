@@ -19,7 +19,7 @@ public class KafkaConsumerSearch {
   @KafkaListener(topics = "${kafka.in.search.topic}", containerFactory = "kafkaListenerContainerFactoryRequest")
   public void search(RequestDTO dto) {
 
-    log.info("Elasticsearch received search query = '{}'", dto.getText());
+    log.info("received search request = '{}'", dto.getText());
     messageService.findMatch(dto);
   }
 }

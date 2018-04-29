@@ -3,6 +3,9 @@ package de.arkadi.elasticsearch.elasticsearch.repository;
 import de.arkadi.elasticsearch.model.RequestDTO;
 import de.arkadi.elasticsearch.model.ResultDTO;
 import de.arkadi.elasticsearch.model.SaveDTO;
+import org.apache.http.HttpEntity;
+import org.apache.http.entity.ContentType;
+import org.apache.http.nio.entity.NStringEntity;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
@@ -13,16 +16,16 @@ import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 
 import javax.annotation.PostConstruct;
@@ -33,6 +36,7 @@ import java.util.stream.Collectors;
 
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
+@PropertySource("classpath:/application.properties")
 public class MessageRepository {
 
   private static final Logger log = LoggerFactory.getLogger(MessageRepository.class);
@@ -43,9 +47,12 @@ public class MessageRepository {
   private final String docType = "_doc";
   private final String textField = "message";
   private final String idField = "id";
+  private final String tags = "tags";
+  private RestClient restClient;
   private boolean dev = false;
 
   public MessageRepository(RestHighLevelClient client,
+                           RestClient restClient,
                            String index,
                            String settings,
                            String mapping) {
@@ -54,19 +61,21 @@ public class MessageRepository {
     this.index = index;
     this.settings = settings;
     this.mapping = mapping;
+    this.restClient = restClient;
+
   }
 
   @PostConstruct
   public void init() throws IOException {
 
     try {
-      createIndex(index);
+      createIndexRest(index);
     }
     catch (Exception e) {
       log.warn("Index '{}' exists", index);
       if (dev) {
         deleteIndex(index);
-        createIndex(index);
+        createIndexRest(index);
         log.warn("Index '{}' was recreated all data lost", index);
       }
     }
@@ -101,7 +110,7 @@ public class MessageRepository {
     BulkRequest bulkRequest = new BulkRequest();
     messages.stream().map(this::assembleIndexRequest).forEach(bulkRequest::add);
 
-    log.info("saveAll status " + client.bulk(bulkRequest).status().toString());
+    log.info("saveAll status '{}'", client.bulk(bulkRequest).status().toString());
   }
 
   public void deleteById(String id) throws IOException {
@@ -157,30 +166,66 @@ public class MessageRepository {
               docType, m.getText());
   }
 
+  @Deprecated
   public void createIndex(String index) throws IOException {
 
     CreateIndexRequest request = new CreateIndexRequest(index);
-    //request.settings(settings, XContentType.JSON);
-    //request.mapping(docType, mapping, XContentType.JSON);
 
-    request.settings(Settings.builder()
-                       .put("index.number_of_shards", 5)
-                       .put("index.number_of_replicas", 0)
-                       .put("refresh_interval", "5s"));
-    //request.mapping("{\"mappings\":{\"doc\":{\"properties\":{\"id\":{\"type\":\"text\"},\"message\":{\"type\":\"text\",\"analyzer\":\"english\"}}}}}", XContentType.JSON);
-    XContentBuilder builder = jsonBuilder().startObject()
+    XContentBuilder settingsBuilder = jsonBuilder().startObject()
+      .startObject("settings")
+      .field("index.number_of_shards", 5)
+      .field("index.number_of_replicas", 0)
+      .field("refresh_interval", "5s")
+      .startObject("analysis")
+      .startObject("analyzer")
+      .startObject("my_analyzer")
+      .field("type", "custom")
+      .field("tokenizer", "standard")
+      .startArray("filter")
+      .value("standard")
+      .value("lowercase")
+      .value("word_delimiter")
+      .value("my_stemmer")
+      .value("english_possessive_stemmer")
+      .value("my_stop")
+      .endArray()
+      .endObject()
+      .endObject()
+      .startObject("filter")
+      .startObject("my_stop")
+      .field("type", "stop")
+      .field("stopwords", "_english_")
+      .endObject()
+      .startObject("my_stemmer")
+      .field("type", "stemmer")
+      .field("language", "english")
+      .endObject()
+      .startObject("english_possessive_stemmer")
+      .field("type", "stemmer")
+      .field("name", "possessive_stemmer")
+      .endObject()
+      .endObject()
+      .endObject()
+      .endObject()
+      .endObject();
+
+    XContentBuilder mappingsBuilder = jsonBuilder().startObject()
+      .field("dynamic", false)
       .startObject("properties")
       .startObject(idField)
-      .field("type", "text")
+      .field("type", "keyword")
       .endObject()
       .startObject(textField)
       .field("type", "text")
       .field("analyzer", "english")
-      .field("store", "false")
+      .endObject()
+      .startObject(tags)
+      .field("type", "keyword")
+      .field("analyzer", "keyword")
       .endObject()
       .endObject()
       .endObject();
-    request.mapping(docType, builder);
+    request.settings(settingsBuilder).mapping(docType, mappingsBuilder);
 
     CreateIndexResponse createIndexResponse = client.indices().create(request);
     log.info(
@@ -198,6 +243,23 @@ public class MessageRepository {
     DeleteIndexRequest request = new DeleteIndexRequest(index);
     DeleteIndexResponse deleteIndexResponse = client.indices().delete(request);
     log.info("Index '{}' is deleted properly :'{}'", index, deleteIndexResponse.isAcknowledged());
+  }
+
+  public void createIndexRest(String index) {
+
+    Map<String, String> params = Collections.emptyMap();
+    String url = "http://134.100.11.157:9200/";
+    HttpEntity settings = new NStringEntity(this.settings, ContentType.APPLICATION_JSON);
+    HttpEntity mappings = new NStringEntity(this.mapping, ContentType.APPLICATION_JSON);
+
+    try {
+      restClient.performRequest("PUT", url + index, params, settings);
+      restClient.performRequest("PUT", url + index + "/_mappings/" + docType, params, mappings);
+
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
 }

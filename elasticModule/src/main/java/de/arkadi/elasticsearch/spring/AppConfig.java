@@ -16,7 +16,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 @EnableAutoConfiguration(exclude = KafkaAutoConfiguration.class)
@@ -55,5 +61,11 @@ public class AppConfig {
                                        KafkaProducerResult kafkaProducer) {
 
     return new MessageServiceImpl(messageRepository, kafkaProducer);
+  }
+
+  @Bean
+  public RestTemplate restTemplate() {
+
+    return new RestTemplate();
   }
 }

@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.Resource;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -62,8 +63,10 @@ public class ElasticsearchConfig {
     catch (IOException e) {
       e.printStackTrace();
     }
+    RestClient restClient = RestClient.builder(new HttpHost(EsHost, EsPort, "http"))
+      .build();
 
-    return new MessageRepository(client(), inIndex, settings, mappings);
+    return new MessageRepository(client(), restClient,inIndex, settings, mappings);
   }
 
 }

@@ -9,11 +9,11 @@ public class RequestDTO {
   Integer request_id;
   Integer answer_partition;
 
-  public RequestDTO(String request, Integer request_id, Integer answer_partition) {
+  public RequestDTO(String text, Integer request_id, Integer answer_partition) {
 
     this.request_id = request_id;
     this.answer_partition = answer_partition;
-    this.text = request;
+    this.text = text;
   }
 
   public RequestDTO() {

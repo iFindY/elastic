@@ -6,8 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 
-import java.util.HashMap;
-
 public class KafkaConsumerDelete {
 
   private static final Logger log = LoggerFactory.getLogger(KafkaProducerResult.class);
@@ -23,7 +21,7 @@ public class KafkaConsumerDelete {
   public void delete(DeleteDTO dto) {
 
     String id = dto.getId();
-    log.info("Elasticsearch received delete query = '{}'" + id);
+    log.info("received delete request = '{}'" + id);
     messageService.deleteById(id);
   }
 }
