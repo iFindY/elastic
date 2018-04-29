@@ -43,5 +43,6 @@ dependencies {
     compile('org.springframework.kafka:spring-kafka')
     compile group: 'org.elasticsearch', name: 'elasticsearch', version: '6.2.3'
     compile group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: '6.2.3'
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 
 }
