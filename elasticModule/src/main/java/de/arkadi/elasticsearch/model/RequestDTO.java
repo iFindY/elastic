@@ -2,10 +2,13 @@ package de.arkadi.elasticsearch.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.ArrayList;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RequestDTO {
 
   String text;
+  ArrayList<String> tags;
   Integer request_id;
   Integer answer_partition;
 
@@ -14,6 +17,13 @@ public class RequestDTO {
     this.request_id = request_id;
     this.answer_partition = answer_partition;
     this.text = text;
+  }
+
+  public RequestDTO(ArrayList<String> tags, Integer request_id, Integer answer_partition) {
+
+    this.request_id = request_id;
+    this.answer_partition = answer_partition;
+    this.tags = tags;
   }
 
   public RequestDTO() {
@@ -48,5 +58,15 @@ public class RequestDTO {
   public void setAnswer_partition(Integer answer_partition) {
 
     this.answer_partition = answer_partition;
+  }
+
+  public ArrayList<String> getTags() {
+
+    return tags;
+  }
+
+  public void setTags(ArrayList<String> tags) {
+
+    this.tags = tags;
   }
 }

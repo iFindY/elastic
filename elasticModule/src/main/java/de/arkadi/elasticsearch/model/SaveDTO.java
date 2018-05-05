@@ -4,13 +4,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class SaveDTO {
 
   private String id;
   private String text;
-  private ArrayList<String> tags;
+  private List<String> tags;
 
   public String getId() {
 
@@ -23,7 +26,7 @@ public class SaveDTO {
     this.id = id;
   }
 
-  public ArrayList<String> getTags() {
+  public List<String> getTags() {
 
     return tags;
   }
@@ -48,7 +51,11 @@ public class SaveDTO {
   private void setText(Map<String, Object> tweet) {
 
     this.text = (String) tweet.get("text");
-    this.tags = (ArrayList<String>) ((Map<String, Object>) tweet.get("entities")).get("hashtags");
+    this.tags = Arrays.stream(text.split("\\s+"))
+      .filter(x -> x.startsWith("#")).
+        map(x -> x.substring(1))
+      .collect(Collectors.toList());
+
   }
 
   @Override

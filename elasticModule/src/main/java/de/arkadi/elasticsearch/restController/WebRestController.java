@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/arkadi/search")
 public class WebRestController {
@@ -20,9 +22,11 @@ public class WebRestController {
   }
 
   @GetMapping(value = "/post")
-  public void store(@RequestParam("id") String id, @RequestParam("data") String data) {
+  public void store(@RequestParam("id") String id,
+                    @RequestParam("data") String data,
+                    @RequestParam("tags") List tags) {
 
-    messageService.save(id, data);
+    messageService.save(id, data, tags);
 
   }
 
@@ -43,7 +47,7 @@ public class WebRestController {
 /*  @GetMapping(value = "/getMatch")
   public ResultDTO getMatchMessage( RequestDTO message) {
 
-    return messageService.findMatch(message);
+    return messageService.matchText(message);
   }*/
 
 }

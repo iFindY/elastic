@@ -10,7 +10,7 @@ public interface MessageService {
 
   void save(SaveDTO message);
 
-  void save(String id, String message);
+  void save(String id, String message, List tags);
 
   void saveAll(List<SaveDTO> message);
 

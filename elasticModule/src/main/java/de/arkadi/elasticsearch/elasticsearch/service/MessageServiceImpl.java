@@ -32,10 +32,10 @@ public class MessageServiceImpl implements MessageService {
     }
   }
 
-  @Override public void save(String id, String message) {
+  @Override public void save(String id, String message, List tags) {
 
     try {
-      messageRepository.save(id, message);
+      messageRepository.save(id, message, tags);
     }
     catch (IOException e) {
       e.printStackTrace();
@@ -69,7 +69,7 @@ public class MessageServiceImpl implements MessageService {
   public void findMatch(RequestDTO message) {
 
     try {
-      ResultDTO result = messageRepository.findMatch(message);
+      ResultDTO result = messageRepository.matchText(message);
       kafkaProducer.send(result);
     }
     catch (IOException e) {
@@ -81,7 +81,7 @@ public class MessageServiceImpl implements MessageService {
   public ResultDTO findAll() {
 
     try {
-      return messageRepository.findAll();
+      return messageRepository.matchAll();
     }
     catch (IOException e) {
       e.printStackTrace();

@@ -51,13 +51,14 @@ public class ElasticsearchConfig {
 
     String settings = null;
     String mappings = null;
-    Resource resourceS = context.getResource("classpath:" + this.settings);
-    Resource resourceM = context.getResource("classpath:" + this.mappings);
-
     try {
-      settings = new BufferedReader(new InputStreamReader(resourceS.getInputStream())).lines()
+      settings = new BufferedReader(
+        new InputStreamReader(
+          context.getResource("classpath:" + this.settings).getInputStream())).lines()
         .collect(Collectors.joining("\n"));
-      mappings = new BufferedReader(new InputStreamReader(resourceM.getInputStream())).lines()
+      mappings = new BufferedReader(
+        new InputStreamReader(
+          context.getResource("classpath:" + this.mappings).getInputStream())).lines()
         .collect(Collectors.joining("\n"));
     }
     catch (IOException e) {
@@ -66,7 +67,7 @@ public class ElasticsearchConfig {
     RestClient restClient = RestClient.builder(new HttpHost(EsHost, EsPort, "http"))
       .build();
 
-    return new MessageRepository(client(), restClient,inIndex, settings, mappings);
+    return new MessageRepository(client(), restClient, inIndex, settings, mappings);
   }
 
 }

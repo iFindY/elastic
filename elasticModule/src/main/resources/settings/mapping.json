@@ -12,6 +12,7 @@
     },
     "tags": {
       "type": "keyword",
+      "analyzer": "tag_analyzer",
       "null_value": "no tags"
     }
   }

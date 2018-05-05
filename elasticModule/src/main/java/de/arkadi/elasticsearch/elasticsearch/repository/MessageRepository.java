@@ -16,12 +16,13 @@ import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.client.Request;
+import org.elasticsearch.client.Response;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.xcontent.XContentBuilder;
-import org.elasticsearch.index.query.MatchQueryBuilder;
-import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.*;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 
 import org.slf4j.Logger;
@@ -87,17 +88,19 @@ public class MessageRepository {
     IndexRequest indexRequest =
       new IndexRequest(index, docType, message.getId())
         .source(idField, message.getId(),
-                textField, message.getText());
+                textField, message.getText(),
+                this.tags, message.getTags());
 
     log.info("save status " + client.index(indexRequest).status().toString());
   }
 
-  public void save(String id, String message) throws IOException {
+  public void save(String id, String message, List tags) throws IOException {
 
     IndexRequest indexRequest =
       new IndexRequest(index, docType, id)
         .source(idField, id,
-                textField, message);
+                textField, message,
+                this.tags, tags);
 
     log.info("Text {} saved '{}' under id {} ",
              message,
@@ -120,7 +123,21 @@ public class MessageRepository {
     log.info("Text with '{}' deleted :'{}'", id, deleteResponse.status().toString());
   }
 
-  public ResultDTO findMatch(RequestDTO message) throws IOException {
+  public ResultDTO termTag(RequestDTO requestDTO) throws IOException {
+
+    SearchRequest searchRequest =
+      new SearchRequest(index)
+        .source(new SearchSourceBuilder()
+                  .query(new TermsQueryBuilder(tags, requestDTO.getTags())));
+
+    SearchResponse response = client.search(searchRequest);
+    log.info("termTag status :'{}'", response.status().toString());
+    return new ResultDTO(getResult(response),
+                         requestDTO.getRequest_id(),
+                         requestDTO.getAnswer_partition());
+  }
+
+  public ResultDTO matchText(RequestDTO message) throws IOException {
 
     SearchRequest searchRequest = new SearchRequest(index);
     SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
@@ -132,7 +149,7 @@ public class MessageRepository {
     searchSourceBuilder.query(matchQueryBuilder);
     searchRequest.source(searchSourceBuilder);
     SearchResponse response = client.search(searchRequest);
-    log.info("findMatch status :'{}'", response.status().toString());
+    log.info("matchText status :'{}'", response.status().toString());
 
     List<String> resultList = Arrays.stream((response).getHits().getHits())
       .map(hit -> hit.getSourceAsMap().get(idField).toString())
@@ -143,27 +160,50 @@ public class MessageRepository {
                          message.getAnswer_partition());
   }
 
-  public ResultDTO findAll() throws IOException {
+  public ResultDTO matchPhraseText(RequestDTO requestDTO) throws IOException {
+
+    SearchRequest searchRequest =
+      new SearchRequest(index)
+        .source(new SearchSourceBuilder()
+                  .query(new MatchPhraseQueryBuilder(textField, requestDTO.getText()).slop(1)));
+
+    SearchResponse response = client.search(searchRequest);
+    log.info("matchPhraseText status :'{}'", response.status().toString());
+    return new ResultDTO(this.getResult(response),
+                         requestDTO.getRequest_id(),
+                         requestDTO.getAnswer_partition());
+
+  }
+
+  public ResultDTO multiMatchTagText(RequestDTO requestDTO) throws IOException {
+
+    SearchRequest searchRequest =
+      new SearchRequest(index)
+        .source(new SearchSourceBuilder()
+                  .query(new MultiMatchQueryBuilder(
+                    requestDTO.getText(), textField, this.tags)));
+
+    SearchResponse response = client.search(searchRequest);
+    log.info("multiMatchTagText status :'{}'", response.status().toString());
+    return new ResultDTO(this.getResult(response),
+                         requestDTO.getRequest_id(),
+                         requestDTO.getAnswer_partition());
+  }
+
+  public ResultDTO matchAll() throws IOException {
 
     SearchRequest searchRequest = new SearchRequest(index);
     SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
     searchSourceBuilder.query(QueryBuilders.matchAllQuery());
     searchRequest.source(searchSourceBuilder);
     SearchResponse response = client.search(searchRequest);
-    log.info("findAll status :" + response.status().toString());
+    log.info("matchAll status :" + response.status().toString());
 
     List<String> result = Arrays.stream(response.getHits().getHits())
-      .map(hit -> hit.field("text").toString())
+      .map(hit -> hit.field(idField).toString())
       .collect(Collectors.toList());
 
     return new ResultDTO(result);
-  }
-
-  private IndexRequest assembleIndexRequest(@NotNull SaveDTO m) {
-
-    return new IndexRequest(index, docType, m.getId())
-      .source("id", m.getId(),
-              docType, m.getText());
   }
 
   @Deprecated
@@ -262,4 +302,18 @@ public class MessageRepository {
     }
   }
 
+  private IndexRequest assembleIndexRequest(@NotNull SaveDTO m) {
+
+    return new IndexRequest(index, docType, m.getId())
+      .source("id", m.getId(),
+              docType, m.getText());
+  }
+
+  private List<String> getResult(SearchResponse response) {
+
+    return Arrays.stream((response).getHits().getHits())
+      .map(hit -> hit.getSourceAsMap().get(idField).toString())
+      .collect(Collectors.toList());
+
+  }
 }

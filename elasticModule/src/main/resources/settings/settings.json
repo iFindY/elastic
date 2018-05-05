@@ -1,5 +1,3 @@
-
-
 {
   "settings": {
     "refresh_interval": "1s",
@@ -17,20 +15,32 @@
             "english_possessive_stemmer",
             "my_stop"
           ]
+        },
+        "tag_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "my_tokenizer",
+            "lowercase"
+          ]
         }
       },
       "filter": {
+        "my_synonym": {
+          "type": "synonym",
+          "synonym_path": "synonyms.txt"
+        },
         "my_stop": {
           "type": "stop",
           "stopwords": "_english_"
         },
-        "my_tokenizer":{
-          "type" : "word_delimiter",
-          "split_on_numerics" : true,
-          "split_on_case_change" : true,
-          "generate_word_parts" : true,
-          "generate_number_parts" : true,
-          "catenate_all" : false
+        "my_tokenizer": {
+          "type": "word_delimiter",
+          "split_on_numerics": true,
+          "split_on_case_change": true,
+          "generate_word_parts": true,
+          "generate_number_parts": true,
+          "catenate_all": false
         },
         "my_stemmer": {
           "type": "stemmer",
