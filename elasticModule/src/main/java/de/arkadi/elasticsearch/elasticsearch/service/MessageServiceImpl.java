@@ -65,11 +65,47 @@ public class MessageServiceImpl implements MessageService {
     }
   }
 
+  public void termTag(RequestDTO message) {
+
+    try {
+      ResultDTO result = messageRepository.termTag(message);
+      kafkaProducer.send(result);
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
   @Override
-  public void findMatch(RequestDTO message) {
+  public void matchText(RequestDTO message) {
 
     try {
       ResultDTO result = messageRepository.matchText(message);
+      kafkaProducer.send(result);
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Override
+  public void matchPhraseText(RequestDTO requestDTO) {
+
+    try {
+      ResultDTO result = messageRepository.matchPhraseText(requestDTO);
+      kafkaProducer.send(result);
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+
+  }
+
+  @Override
+  public void multiMatchTagText(RequestDTO requestDTO) {
+
+    try {
+      ResultDTO result = messageRepository.multiMatchTagText(requestDTO);
       kafkaProducer.send(result);
     }
     catch (IOException e) {

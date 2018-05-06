@@ -23,8 +23,6 @@ import java.util.stream.Collectors;
 @PropertySource("classpath:/application.properties")
 public class ElasticsearchConfig {
 
-  private static final Logger log = LoggerFactory.getLogger(ElasticsearchConfig.class);
-
   @Value("${elasticsearch.host}")
   private String EsHost;
 

@@ -91,7 +91,8 @@ public class KafkaConfig {
   @Bean
   public ConcurrentKafkaListenerContainerFactory<String, SaveDTO> kafkaListenerContainerFactorySave() {
 
-    ConcurrentKafkaListenerContainerFactory<String, SaveDTO> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    ConcurrentKafkaListenerContainerFactory<String, SaveDTO> factory
+      = new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactorySave());
 
     return factory;
@@ -100,7 +101,8 @@ public class KafkaConfig {
   @Bean
   public ConcurrentKafkaListenerContainerFactory<String, RequestDTO> kafkaListenerContainerFactoryRequest() {
 
-    ConcurrentKafkaListenerContainerFactory<String, RequestDTO> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    ConcurrentKafkaListenerContainerFactory<String, RequestDTO> factory
+      = new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactoryRequest());
 
     return factory;
@@ -109,7 +111,8 @@ public class KafkaConfig {
   @Bean
   public ConcurrentKafkaListenerContainerFactory<String, DeleteDTO> kafkaListenerContainerFactoryDelete() {
 
-    ConcurrentKafkaListenerContainerFactory<String, DeleteDTO> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    ConcurrentKafkaListenerContainerFactory<String, DeleteDTO> factory
+      = new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactoryDelete());
 
     return factory;

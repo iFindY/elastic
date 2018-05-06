@@ -16,7 +16,13 @@ public interface MessageService {
 
   void deleteById(String id);
 
-  void findMatch(RequestDTO message);
+  void termTag(RequestDTO requestDTO);
+
+  void matchText(RequestDTO message);
+
+  void matchPhraseText(RequestDTO requestDTO);
+
+  void multiMatchTagText(RequestDTO requestDTO);
 
   ResultDTO findAll();
 

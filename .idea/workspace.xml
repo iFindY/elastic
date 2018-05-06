@@ -7,19 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a4558b4-5157-4988-a349-511bb579ae01" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Elastic2018Artefact_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Elastic_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/RequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/RequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/restController/WebRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/restController/WebRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/Tweet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -84,11 +78,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SaveDTO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java">
+      <file leaf-file-name="KafkaConsumerSearch.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="56" column="35" lean-forward="true" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+            <state relative-caret-position="161">
+              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -690,25 +684,25 @@
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/settings/test.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/ResultDTO.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/DeleteDTO.java" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSearch.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerDelete.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaProducerResult.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/tweet.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/Tweet.java" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java" />
         <option value="$PROJECT_DIR$/elasticModule/build.gradle" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AppConfig.java" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/RequestDTO.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/settings.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/restController/WebRestController.java" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/restController/WebRestController.java" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSearch.java" />
       </list>
     </option>
   </component>
@@ -725,7 +719,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="638" />
+    <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -782,6 +776,12 @@
             <path>
               <item name="Elastic" type="58d84e3e:PackageViewProjectNode" />
               <item name="Elastic2018Artefact_main" type="616d4139:PackageViewModuleNode" />
+              <item name="de.arkadi.elasticsearch" type="1f31426a:PackageElementNode" />
+              <item name="spring" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Elastic" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Elastic2018Artefact_main" type="616d4139:PackageViewModuleNode" />
               <item name="settings" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
@@ -808,7 +808,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="structure&#9;ACTION&#9;ActivateStructureToolWindow&#10;gradle&#9;ACTION&#9;ActivateGradleToolWindow&#10;run&#9;ACTION&#9;ActivateRunToolWindow&#10;build&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/build.gradle&#10;app&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AppConfig.java&#10;proper&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;gradle:build&#9;null&#9;null&#10;properties&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;Kafka&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.kafka.KafkaConsumerSave&#10;Save&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" />
+    <property name="SearchEverywhereHistoryKey" value="build proj&#9;ACTION&#9;CompileDirty&#10;build&#9;ACTION&#9;CompileDirty&#10;elastic&#9;RUN_CONFIGURATION&#9;elastic [build]&#10;structure&#9;ACTION&#9;ActivateStructureToolWindow&#10;gradle&#9;ACTION&#9;ActivateGradleToolWindow&#10;run&#9;ACTION&#9;ActivateRunToolWindow&#10;app&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AppConfig.java&#10;proper&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;gradle:build&#9;null&#9;null&#10;properties&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;Kafka&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.kafka.KafkaConsumerSave&#10;Save&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -816,7 +816,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.09283088" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="settings.editor.selected.configurable" value="editor.breadcrumbs" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -838,11 +838,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Elasticservice [build]">
+  <component name="RunManager" selected="Gradle.elastic [build]">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="Elasticservice [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="elastic [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/elasticModule" />
@@ -876,7 +876,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ElasticService [Start]" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="elastic [run]" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Elastic2018Artefact_main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="de.arkadi.elasticsearch.spring.Application" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -904,12 +904,12 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.ElasticService [Start]" />
-      <item itemvalue="Gradle.Elasticservice [build]" />
+      <item itemvalue="Spring Boot.elastic [run]" />
+      <item itemvalue="Gradle.elastic [build]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Elasticservice [build]" />
+        <item itemvalue="Gradle.elastic [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -917,6 +917,7 @@
     <option name="beanDetailsProportion" value="0.3" />
   </component>
   <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
     <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS" />
   </component>
   <component name="SvnConfiguration">
@@ -964,7 +965,9 @@
       <workItem from="1525434636148" duration="1558000" />
       <workItem from="1525449967446" duration="178000" />
       <workItem from="1525456600712" duration="391000" />
-      <workItem from="1525507931573" duration="8960000" />
+      <workItem from="1525507931573" duration="10194000" />
+      <workItem from="1525549976173" duration="4671000" />
+      <workItem from="1525607316189" duration="61000" />
     </task>
     <task id="LOCAL-00001" summary="new design">
       <created>1523300567154</created>
@@ -984,7 +987,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123949000" />
+    <option name="totallyTimeSpent" value="129915000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1001,33 +1004,33 @@
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.503231" side_tool="true" weight="0.6161202" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32639793" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50080776" side_tool="true" weight="0.325811" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32956383" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6734375" weight="0.5601093" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49676898" weight="0.61748636" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49676898" weight="0.61625" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.58110017" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32863188" />
       <window_info id="Designer" order="1" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.483965" visible="true" weight="0.17734376" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32769832" />
       <window_info anchor="right" id="Gradle" order="5" weight="0.18125" />
-      <window_info anchor="right" id="Structure" order="1" sideWeight="0.51603496" visible="true" weight="0.19296876" />
+      <window_info anchor="right" id="Structure" order="1" sideWeight="0.51603496" side_tool="true" visible="true" weight="0.21171875" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.59562844" />
       <window_info id="Favorites" order="4" sideWeight="0.5136612" side_tool="true" weight="0.2375" />
       <window_info id="Web" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32639793" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6734375" weight="0.55916774" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5955787" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="13" weight="0.32863188" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32769832" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1071,18 +1074,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSearch.java</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java</url>
-          <line>72</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java</url>
           <line>269</line>
           <properties />
@@ -1093,13 +1084,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/1.5.10.RELEASE/2d0d3627983d597ef66712955302c2b1ba0337de/spring-boot-autoconfigure-1.5.10.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/kafka/KafkaAnnotationDrivenConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="55" column="21" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.kafka/spring-kafka/1.1.7.RELEASE/584bef123da5fb0571b0199068ceb4ba8fa8e3e3/spring-kafka-1.1.7.RELEASE-sources.jar!/org/springframework/kafka/core/ConsumerFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -1205,38 +1189,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/DeleteDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerDelete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/ext/nashorn.jar!/jdk/nashorn/internal/parser/JSONParser.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1610">
           <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/Tweet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1310,13 +1266,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.2.3/2d57735181af32d4bc74ac87238b9ef7bc0ccdf4/elasticsearch-6.2.3-sources.jar!/org/elasticsearch/index/query/TermsQueryBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2484">
@@ -1338,27 +1287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaProducerResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="70" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.14.RELEASE/89a3dd5902381363686fa8fb737e3c028cedca53/spring-core-4.3.14.RELEASE-sources.jar!/org/springframework/util/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-303">
@@ -1366,38 +1294,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/RequestDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
           <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1415,41 +1315,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.2.3/2d57735181af32d4bc74ac87238b9ef7bc0ccdf4/elasticsearch-6.2.3-sources.jar!/org/elasticsearch/index/query/MultiMatchQueryBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="191" column="47" selection-start-line="191" selection-start-column="47" selection-end-line="191" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="209" column="3" selection-start-line="209" selection-start-column="3" selection-end-line="209" selection-end-column="3" />
-          <folding>
-            <element signature="method#init#0;class#MessageRepository#0" />
-            <element signature="method#save#0;class#MessageRepository#0" />
-            <element signature="method#save#1;class#MessageRepository#0" />
-            <element signature="method#saveAll#0;class#MessageRepository#0" />
-            <element signature="method#deleteById#0;class#MessageRepository#0" />
-            <element signature="method#termTag#0;class#MessageRepository#0" />
-            <element signature="method#matchText#0;class#MessageRepository#0" />
-            <element signature="method#matchPhraseText#0;class#MessageRepository#0" />
-            <element signature="method#multiMatchTagText#0;class#MessageRepository#0" />
-            <element signature="method#matchAll#0;class#MessageRepository#0" />
-            <element signature="method#createIndex#0;class#MessageRepository#0" />
-            <element signature="method#deleteIndex#0;class#MessageRepository#0" />
-            <element signature="method#createIndexRest#0;class#MessageRepository#0" />
-            <element signature="method#assembleIndexRequest#0;class#MessageRepository#0" />
-            <element signature="method#getResult#0;class#MessageRepository#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1460,10 +1329,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/Tweet.java" />
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/DeleteDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="37" column="35" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1340">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="185" column="19" selection-start-line="185" selection-start-column="19" selection-end-line="185" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="118" column="3" lean-forward="true" selection-start-line="118" selection-start-column="3" selection-end-line="118" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="70" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerDelete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="56" column="35" lean-forward="true" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+        <state relative-caret-position="23">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaProducerResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
         </state>
       </provider>
     </entry>
