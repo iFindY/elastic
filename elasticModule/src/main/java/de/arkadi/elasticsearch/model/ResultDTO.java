@@ -60,6 +60,6 @@ public class ResultDTO implements Serializable {
   @Override
   public String toString() {
 
-    return "\n Result tweet id list :" + resultList.toString() + "\n";
+    return "Result tweet id list: " + resultList.toString();
   }
 }

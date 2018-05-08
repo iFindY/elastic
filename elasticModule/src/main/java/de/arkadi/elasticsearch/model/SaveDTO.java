@@ -61,6 +61,9 @@ public class SaveDTO {
   @Override
   public String toString() {
 
-    return "person: " + id + " message: " + text;
+    return "person: "
+           + id
+           + ", message: "
+           + text;
   }
 }

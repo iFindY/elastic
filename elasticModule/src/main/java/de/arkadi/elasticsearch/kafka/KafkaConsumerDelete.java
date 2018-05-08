@@ -21,7 +21,6 @@ public class KafkaConsumerDelete {
   public void delete(DeleteDTO dto) {
 
     String id = dto.getId();
-    log.info("received delete request = '{}'" + id);
     messageService.deleteById(id);
   }
 }

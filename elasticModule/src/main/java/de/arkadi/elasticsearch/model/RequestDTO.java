@@ -69,4 +69,18 @@ public class RequestDTO {
 
     this.tags = tags;
   }
+
+  @Override
+  public String toString() {
+
+    return "request id: "
+           + request_id
+           + ", answer partition: "
+           + answer_partition
+           + ", text "
+           + text
+           + ", tags "
+           + tags.toString();
+
+  }
 }

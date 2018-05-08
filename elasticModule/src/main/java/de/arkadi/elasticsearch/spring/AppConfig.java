@@ -68,4 +68,10 @@ public class AppConfig {
 
     return new RestTemplate();
   }
+
+  @Bean
+  public AspectLog aspect() {
+
+    return new AspectLog();
+  }
 }

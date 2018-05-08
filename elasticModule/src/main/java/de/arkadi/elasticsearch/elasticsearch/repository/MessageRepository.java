@@ -16,13 +16,12 @@ import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.client.Request;
-import org.elasticsearch.client.Response;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.index.query.*;
+import org.elasticsearch.rest.RestStatus;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 
 import org.slf4j.Logger;
@@ -83,7 +82,7 @@ public class MessageRepository {
 
   }
 
-  public void save(SaveDTO message) throws IOException {
+  public RestStatus save(SaveDTO message) throws IOException {
 
     IndexRequest indexRequest =
       new IndexRequest(index, docType, message.getId())
@@ -91,10 +90,10 @@ public class MessageRepository {
                 textField, message.getText(),
                 this.tags, message.getTags());
 
-    log.info("save status " + client.index(indexRequest).status().toString());
+    return client.index(indexRequest).status();
   }
 
-  public void save(String id, String message, List tags) throws IOException {
+  public RestStatus save(String id, String message, List tags) throws IOException {
 
     IndexRequest indexRequest =
       new IndexRequest(index, docType, id)
@@ -102,25 +101,22 @@ public class MessageRepository {
                 textField, message,
                 this.tags, tags);
 
-    log.info("Text {} saved '{}' under id {} ",
-             message,
-             client.index(indexRequest).status().toString(),
-             id);
+    return client.index(indexRequest).status();
   }
 
-  public void saveAll(List<SaveDTO> messages) throws IOException {
+  public RestStatus saveAll(List<SaveDTO> messages) throws IOException {
 
     BulkRequest bulkRequest = new BulkRequest();
     messages.stream().map(this::assembleIndexRequest).forEach(bulkRequest::add);
 
-    log.info("saveAll status '{}'", client.bulk(bulkRequest).status().toString());
+    return client.bulk(bulkRequest).status();
   }
 
-  public void deleteById(String id) throws IOException {
+  public RestStatus deleteById(String id) throws IOException {
 
     DeleteRequest request = new DeleteRequest(index, docType, id);
     DeleteResponse deleteResponse = client.delete(request);
-    log.info("Text with '{}' deleted :'{}'", id, deleteResponse.status().toString());
+    return deleteResponse.status();
   }
 
   public ResultDTO termTag(RequestDTO requestDTO) throws IOException {
@@ -131,7 +127,6 @@ public class MessageRepository {
                   .query(new TermsQueryBuilder(tags, requestDTO.getTags())));
 
     SearchResponse response = client.search(searchRequest);
-    log.info("termTag status :'{}'", response.status().toString());
     return new ResultDTO(getResult(response),
                          requestDTO.getRequest_id(),
                          requestDTO.getAnswer_partition());
@@ -149,7 +144,6 @@ public class MessageRepository {
     searchSourceBuilder.query(matchQueryBuilder);
     searchRequest.source(searchSourceBuilder);
     SearchResponse response = client.search(searchRequest);
-    log.info("matchText status :'{}'", response.status().toString());
 
     List<String> resultList = Arrays.stream((response).getHits().getHits())
       .map(hit -> hit.getSourceAsMap().get(idField).toString())
@@ -168,7 +162,6 @@ public class MessageRepository {
                   .query(new MatchPhraseQueryBuilder(textField, requestDTO.getText()).slop(1)));
 
     SearchResponse response = client.search(searchRequest);
-    log.info("matchPhraseText status :'{}'", response.status().toString());
     return new ResultDTO(this.getResult(response),
                          requestDTO.getRequest_id(),
                          requestDTO.getAnswer_partition());
@@ -184,7 +177,6 @@ public class MessageRepository {
                     requestDTO.getText(), textField, this.tags)));
 
     SearchResponse response = client.search(searchRequest);
-    log.info("multiMatchTagText status :'{}'", response.status().toString());
     return new ResultDTO(this.getResult(response),
                          requestDTO.getRequest_id(),
                          requestDTO.getAnswer_partition());
@@ -197,7 +189,6 @@ public class MessageRepository {
     searchSourceBuilder.query(QueryBuilders.matchAllQuery());
     searchRequest.source(searchSourceBuilder);
     SearchResponse response = client.search(searchRequest);
-    log.info("matchAll status :" + response.status().toString());
 
     List<String> result = Arrays.stream(response.getHits().getHits())
       .map(hit -> hit.field(idField).toString())

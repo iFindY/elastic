@@ -20,7 +20,6 @@ public class KafkaProducerResult {
 
   public void send(ResultDTO result) {
 
-    log.info("sending search result='{}' to {}", result, kafkaTopic);
     kafkaTemplate.send(kafkaTopic, result);
   }
 }

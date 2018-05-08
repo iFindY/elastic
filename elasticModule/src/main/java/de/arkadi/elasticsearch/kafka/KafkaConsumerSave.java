@@ -23,7 +23,6 @@ public class KafkaConsumerSave {
   @KafkaListener(topics = "${kafka.in.save.topic}",containerFactory = "kafkaListenerContainerFactorySave")
   public void save(SaveDTO saveDTO) {
 
-    log.info("received save request='{}'", saveDTO.toString());
     messageService.save(saveDTO);
   }
 }
