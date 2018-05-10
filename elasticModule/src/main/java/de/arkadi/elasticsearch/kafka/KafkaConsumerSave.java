@@ -9,10 +9,6 @@ import org.springframework.kafka.annotation.KafkaListener;
 
 public class KafkaConsumerSave {
 
-  @Autowired
-
-
-  private static final Logger log = LoggerFactory.getLogger(KafkaProducerResult.class);
   private MessageService messageService;
 
   public KafkaConsumerSave(MessageService messageService) {
@@ -20,7 +16,8 @@ public class KafkaConsumerSave {
     this.messageService = messageService;
 
   }
-  @KafkaListener(topics = "${kafka.in.save.topic}",containerFactory = "kafkaListenerContainerFactorySave")
+
+  @KafkaListener(topics = "${kafka.in.save.topic}", containerFactory = "kafkaListenerContainerFactorySave")
   public void save(SaveDTO saveDTO) {
 
     messageService.save(saveDTO);

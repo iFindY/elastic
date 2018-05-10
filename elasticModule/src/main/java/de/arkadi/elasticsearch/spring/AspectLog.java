@@ -23,6 +23,7 @@ public class AspectLog {
   private void repoget() {
 
   }
+
   @Pointcut("execution (org.elasticsearch.rest.RestStatus de.arkadi.elasticsearch.elasticsearch.repository.*.*(..))")
   private void reposet() {
 
@@ -48,7 +49,7 @@ public class AspectLog {
     List<String> query = Arrays.stream(joinPoint.getArgs())
       .map(Object::toString)
       .collect(Collectors.toList());
-    log.info("\n method: '{}' \n received: '{}'\n and returned: '{}'\n",
+    log.info(" method: '{}' received: '{}' and returned: '{}'",
              signature,
              query.toString(),
              results.getResultList());
@@ -61,7 +62,7 @@ public class AspectLog {
     List<String> query = Arrays.stream(joinPoint.getArgs())
       .map(Object::toString)
       .collect(Collectors.toList());
-    log.info("\n method: '{}' \n received: '{}'\n and returned: '{}'\n",
+    log.info(" method: '{}'  received: '{}' and returned: '{}'",
              signature,
              query.toString(),
              result.toString());

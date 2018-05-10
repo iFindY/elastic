@@ -48,6 +48,8 @@ public class MessageRepository {
   private final String textField = "message";
   private final String idField = "id";
   private final String tags = "tags";
+  private final String users = "users";
+  private final String time = "timeStamp";
   private RestClient restClient;
   private boolean dev = false;
 
@@ -88,7 +90,9 @@ public class MessageRepository {
       new IndexRequest(index, docType, message.getId())
         .source(idField, message.getId(),
                 textField, message.getText(),
-                this.tags, message.getTags());
+                this.tags, message.getTags(),
+                this.users, message.getUsers(),
+                this.time, message.getTimeStamp());
 
     return client.index(indexRequest).status();
   }
