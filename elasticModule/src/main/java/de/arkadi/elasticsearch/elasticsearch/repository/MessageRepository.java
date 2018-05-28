@@ -1,11 +1,16 @@
 package de.arkadi.elasticsearch.elasticsearch.repository;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import de.arkadi.elasticsearch.model.RequestDTO;
 import de.arkadi.elasticsearch.model.ResultDTO;
 import de.arkadi.elasticsearch.model.SaveDTO;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.ContentType;
 import org.apache.http.nio.entity.NStringEntity;
+import org.apache.http.util.EntityUtils;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
@@ -16,6 +21,7 @@ import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.client.Response;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.unit.Fuzziness;
@@ -23,7 +29,10 @@ import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.index.query.*;
 import org.elasticsearch.rest.RestStatus;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-
+import org.elasticsearch.search.suggest.Suggest;
+import org.elasticsearch.search.suggest.SuggestBuilder;
+import org.elasticsearch.search.suggest.SuggestBuilders;
+import org.elasticsearch.search.suggest.term.TermSuggestion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.PropertySource;
@@ -34,15 +43,22 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.Optional.*;
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
 @PropertySource("classpath:/application.properties")
 public class MessageRepository {
 
   private static final Logger log = LoggerFactory.getLogger(MessageRepository.class);
+  String queryUrl = "/twitterindex/_doc/_search";
+  String saveURL = "/twitterindex/_doc/";
+  private Map<String, String> params = Collections.emptyMap();
   private RestHighLevelClient client;
+  private RestClient restClient;
+  private String save;
   private String settings;
   private String mapping;
+  private String completion;
   private String index;
   private final String docType = "_doc";
   private final String textField = "message";
@@ -50,20 +66,25 @@ public class MessageRepository {
   private final String tags = "tags";
   private final String users = "users";
   private final String time = "timeStamp";
-  private RestClient restClient;
+  private final String input = "input";
+  private final String locationSuggest = "userLocationSuggest";
   private boolean dev = false;
 
   public MessageRepository(RestHighLevelClient client,
                            RestClient restClient,
                            String index,
                            String settings,
-                           String mapping) {
+                           String mapping,
+                           String completion,
+                           String save) {
 
     this.client = client;
     this.index = index;
     this.settings = settings;
     this.mapping = mapping;
     this.restClient = restClient;
+    this.completion = completion;
+    this.save = save;
 
   }
 
@@ -84,17 +105,11 @@ public class MessageRepository {
 
   }
 
-  public RestStatus save(SaveDTO message) throws IOException {
+  public Response save(SaveDTO message) throws IOException {
 
-    IndexRequest indexRequest =
-      new IndexRequest(index, docType, message.getId())
-        .source(idField, message.getId(),
-                textField, message.getText(),
-                this.tags, message.getTags(),
-                this.users, message.getUsers(),
-                this.time, message.getTimeStamp());
-
-    return client.index(indexRequest).status();
+    HttpEntity save = new NStringEntity(message.createSaveRequest(this.save),
+                                        ContentType.APPLICATION_JSON);
+    return restClient.performRequest("POST", saveURL, params, save);
   }
 
   public RestStatus save(String id, String message, List tags) throws IOException {
@@ -145,7 +160,7 @@ public class MessageRepository {
       .prefixLength(3)
       .maxExpansions(5);
 
-    searchSourceBuilder.query(matchQueryBuilder);
+    searchSourceBuilder.query(matchQueryBuilder).from(0).size(20);
     searchRequest.source(searchSourceBuilder);
     SearchResponse response = client.search(searchRequest);
 
@@ -199,6 +214,56 @@ public class MessageRepository {
       .collect(Collectors.toList());
 
     return new ResultDTO(result);
+  }
+
+  //TODO
+  public List<String> getCompletion(String completion) throws IOException {
+
+    SearchRequest searchRequest =
+      new SearchRequest(index)
+        .source(new SearchSourceBuilder()
+                  .suggest(new SuggestBuilder()
+                             .addSuggestion("suggest_location",
+                                            SuggestBuilders
+                                              .termSuggestion("userLocation.input")
+                                              .text(completion))));
+
+    SearchResponse searchResponse = client.search(searchRequest);
+
+    Suggest suggest = searchResponse.getSuggest();
+    TermSuggestion termSuggestion = suggest.getSuggestion("suggest_location");
+
+    return termSuggestion.getEntries()
+      .stream()
+      .map(Suggest.Suggestion.Entry::getOptions)
+      .flatMap(Collection::stream)
+      .map(x -> x.getText().string())
+      .collect(Collectors.toList());
+  }
+
+  public List getStateCompletion(String request) throws IOException {
+
+    ObjectMapper mapper = new ObjectMapper();
+    HttpEntity suggest = new NStringEntity(completion.replace("?", request),
+                                           ContentType.APPLICATION_JSON);
+    Response result = restClient.performRequest("GET", queryUrl, params, suggest);
+
+    TypeReference<HashMap<String, Object>> typeRef = new TypeReference<HashMap<String, Object>>() {
+
+    };
+
+    Map<String, Object> map = mapper.readValue(EntityUtils.toString(result.getEntity()), typeRef);
+    List<HashMap<String, Object>> completion =
+      (List<HashMap<String, Object>>)
+        (((List<HashMap<String, Object>>)
+          ((HashMap<String, Object>) map
+            .get("suggest")).get("location_suggest"))
+          .get(0)).get("options");
+
+    return completion.stream()
+      .map(x -> (String) ((HashMap<String, Object>) x.get("_source")).get("userLocationSuggest"))
+      .distinct()
+      .collect(Collectors.toList());
   }
 
   @Deprecated

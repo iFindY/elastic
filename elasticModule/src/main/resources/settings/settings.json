@@ -1,7 +1,7 @@
 {
   "settings": {
     "refresh_interval": "1s",
-    "number_of_shards": "5",
+    "number_of_shards": "2",
     "number_of_replicas": "0",
     "analysis": {
       "analyzer": {
@@ -16,6 +16,17 @@
             "my_stop"
           ]
         },
+        "nGram_analyzer": {
+          "type": "custom",
+          "tokenizer": "nGram_tokenizer",
+          "filter": [
+            "lowercase",
+            "asciifolding"
+          ]
+        },
+        "nGram_search_analyzer":{
+          "tokenizer":"lowercase"
+        },
         "tag_analyzer": {
           "type": "custom",
           "tokenizer": "standard",
@@ -28,7 +39,11 @@
       "filter": {
         "my_synonym": {
           "type": "synonym",
-          "synonym_path": "synonyms.txt"
+          "synonyms": [
+            "i-pod, i pod => ipod",
+            "i-Phone, iPhone 6, iPhone 7, iPhone 8, iPhone 10, iPhone X, iPhone6, iPhone7, iPhone8, iPhoneX =>iPhone",
+            "universe, cosmos"
+          ]
         },
         "my_stop": {
           "type": "stop",
@@ -49,6 +64,19 @@
         "english_possessive_stemmer": {
           "type": "stemmer",
           "language": "possessive_english"
+        }
+      },
+      "tokenizer":{
+        "nGram_tokenizer": {
+          "type": "edge_ngram",
+          "min_gram": 3,
+          "max_gram": 5,
+          "token_chars": [
+            "letter",
+            "digit",
+            "punctuation",
+            "symbol"
+          ]
         }
       }
     }

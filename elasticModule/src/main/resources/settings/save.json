@@ -1,0 +1,11 @@
+{
+  "id": "setId",
+  "message": "setMessage",
+  "tags": "setTags",
+  "users": "setUsers",
+  "timeStamp": "setTimeStamp",
+  "userLocation": "setUserLocation",
+  "userLocationCompletion": {
+    "input": "setInput"
+  }
+}

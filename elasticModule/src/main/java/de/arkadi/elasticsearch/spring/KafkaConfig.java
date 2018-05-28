@@ -53,6 +53,24 @@ public class KafkaConfig {
   }
 
   @Bean
+  public ConsumerFactory<String, Map> consumerFactoryTest() {
+
+    return new DefaultKafkaConsumerFactory<>(consumerConfig(),
+                                             new StringDeserializer(),
+                                             new JsonDeserializer<>(Map.class));
+  }
+
+  @Bean
+  public ConcurrentKafkaListenerContainerFactory<String, Map> kafkaListenerContainerFactoryTest() {
+
+    ConcurrentKafkaListenerContainerFactory<String, Map> factory
+      = new ConcurrentKafkaListenerContainerFactory<>();
+    factory.setConsumerFactory(consumerFactoryTest());
+
+    return factory;
+  }
+
+  @Bean
   public ConsumerFactory<String, SaveDTO> consumerFactorySave() {
 
     return new DefaultKafkaConsumerFactory<>(consumerConfig(),

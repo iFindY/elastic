@@ -1,0 +1,28 @@
+{
+  "query": {
+    "bool": {
+      "must": {
+        "terms": {
+          "tags": "?"
+        }
+      },
+      "filter": {
+        "range": {
+          "timeStamp": {
+            "gte": "now-1d/d",
+            "lt": "now/d"
+          }
+        }
+      },
+      "should": [
+        {
+          "term": {
+            "users": "?",
+            "boost": 2.0
+          }
+        }
+      ],
+      "boost": 1.0
+    }
+  }
+}

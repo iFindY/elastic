@@ -38,6 +38,12 @@ public class ElasticsearchConfig {
   @Value("${elasticsearch.mapping.path}")
   String mappings;
 
+  @Value("${elasticsearch.completion.path}")
+  String completion;
+
+  @Value("${elasticsearch.save.path}")
+  String save;
+
   @Bean
   public RestHighLevelClient client() {
 
@@ -49,6 +55,8 @@ public class ElasticsearchConfig {
 
     String settings = null;
     String mappings = null;
+    String completion = null;
+    String save = null;
     try {
       settings = new BufferedReader(
         new InputStreamReader(
@@ -58,6 +66,14 @@ public class ElasticsearchConfig {
         new InputStreamReader(
           context.getResource("classpath:" + this.mappings).getInputStream())).lines()
         .collect(Collectors.joining("\n"));
+      completion = new BufferedReader(
+        new InputStreamReader(
+          context.getResource("classpath:" + this.completion).getInputStream())).lines()
+        .collect(Collectors.joining("\n"));
+      save = new BufferedReader(
+        new InputStreamReader(
+          context.getResource("classpath:" + this.save).getInputStream())).lines()
+        .collect(Collectors.joining("\n"));
     }
     catch (IOException e) {
       e.printStackTrace();
@@ -65,7 +81,13 @@ public class ElasticsearchConfig {
     RestClient restClient = RestClient.builder(new HttpHost(EsHost, EsPort, "http"))
       .build();
 
-    return new MessageRepository(client(), restClient, inIndex, settings, mappings);
+    return new MessageRepository(client(),
+                                 restClient,
+                                 inIndex,
+                                 settings,
+                                 mappings,
+                                 completion,
+                                 save);
   }
 
 }

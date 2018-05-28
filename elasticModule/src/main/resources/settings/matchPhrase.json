@@ -1,0 +1,10 @@
+{
+  "query": {
+    "match_phrase": {
+      "message": {
+        "query": "?",
+        "slop": 1
+      }
+    }
+  }
+}

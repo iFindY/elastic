@@ -1,0 +1,15 @@
+{
+  "suggest": {
+    "location_suggest": {
+      "prefix": "?",
+      "completion": {
+        "field": "userLocationCompletion",
+        "fuzzy": {
+          "fuzziness": 1
+        }
+      }
+    }
+  }
+}
+
+

@@ -7,6 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class KafkaConsumerSave {
 
   private MessageService messageService;
@@ -17,9 +20,9 @@ public class KafkaConsumerSave {
 
   }
 
-  @KafkaListener(topics = "${kafka.in.save.topic}", containerFactory = "kafkaListenerContainerFactorySave")
-  public void save(SaveDTO saveDTO) {
+  @KafkaListener(topics = "${kafka.in.save.topic}", containerFactory = "kafkaListenerContainerFactoryTest")
+  public void save(HashMap saveRequest) {
 
-    messageService.save(saveDTO);
+    messageService.save(new SaveDTO(saveRequest));
   }
 }

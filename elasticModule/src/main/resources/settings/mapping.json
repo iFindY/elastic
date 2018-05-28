@@ -12,16 +12,23 @@
     },
     "tags": {
       "type": "keyword",
-      "analyzer": "tag_analyzer",
       "null_value": "no tags"
+    },
+    "users": {
+      "type": "keyword",
+      "null_value": "no users"
     },
     "timeStamp": {
       "type": "date",
       "format": "epoch_millis"
     },
-    "users": {
-      "type": "keyword",
-      "null_value": "no_users"
+    "userLocation": {
+      "type": "text",
+      "analyzer": "nGram_analyzer",
+      "search_analyzer": "nGram_search_analyzer"
+    },
+    "userLocationCompletion": {
+      "type": "completion"
     }
   }
 }

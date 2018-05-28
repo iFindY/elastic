@@ -1,15 +1,16 @@
 package de.arkadi.elasticsearch.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSetter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.google.gson.Gson;
+import joptsimple.internal.Strings;
+import org.apache.commons.lang.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Nullable;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SaveDTO {
 
   private String id;
@@ -17,26 +18,55 @@ public class SaveDTO {
   private Long timeStamp;
   private List<String> tags;
   private List<String> users;
+  private String userLocation;
+  private List<String> completion;
+  private Gson gson;
+
+  public SaveDTO(HashMap saveRequest) {
+
+    gson = new Gson();
+    this.id = (String) saveRequest.get("uhh_id");
+    HashMap<String, Object> tweet = (HashMap<String, Object>) saveRequest.get("tweet");
+    this.text = ((String) tweet.get("text")).replaceAll("[\\n\\r\\t\\\\]+", "");
+    String location = Optional.ofNullable((String) ((HashMap<String, Object>) tweet.get("user")).get(
+      "location")).orElse("null");
+    this.userLocation = Strings.isNullOrEmpty(location.trim()) ? "null" : location.replaceAll("[^A-Za-z0-9 ]","");
+    this.timeStamp = Long.valueOf(tweet.get("timestamp_ms").toString());
+    List<String> tempText = Arrays.asList(text.split("\\s+"));
+    List<String> tempLocation = Arrays.asList(this.userLocation.split("\\s+"));
+    Function<String, String> normalise = (input)
+      -> input.replaceAll("\\W+", "");
+    this.tags = tempText.stream()
+      .filter(x -> x.startsWith("#")).
+        map(normalise)
+      .collect(Collectors.toList());
+    this.users = tempText.stream()
+      .filter(x -> x.startsWith("@")).
+        map(normalise)
+      .collect(Collectors.toList());
+    this.completion = tempLocation.stream()
+      .map(normalise).filter(StringUtils::isNotEmpty).collect(Collectors.toList());
+  }
+
+  @Nullable
+  public String getUserLocation() {
+
+    return userLocation;
+  }
+
+  public void setUserLocation(String userLocation) {
+
+    this.userLocation = userLocation;
+  }
 
   public String getId() {
 
     return id;
   }
 
-  @JsonSetter("uhh_id")
   public void setId(String id) {
 
     this.id = id;
-  }
-
-  public List<String> getTags() {
-
-    return tags;
-  }
-
-  public void setTags(ArrayList<String> tags) {
-
-    this.tags = tags;
   }
 
   public String getText() {
@@ -44,46 +74,9 @@ public class SaveDTO {
     return text;
   }
 
-  public void setTimeStamp(Long timeStamp) {
-
-    this.timeStamp = timeStamp;
-  }
-
-  public void setTags(List<String> tags) {
-
-    this.tags = tags;
-  }
-
-  public void setUsers(List<String> users) {
-
-    this.users = users;
-  }
-
   public void setText(String text) {
 
     this.text = text;
-  }
-
-  public List<String> getUsers() {
-
-    return users;
-  }
-
-  @SuppressWarnings("unchecked")
-  @JsonProperty("tweet")
-  private void setText(Map<String, Object> tweet) {
-
-    this.text = (String) tweet.get("text");
-    this.timeStamp = (Long) tweet.get("timestamp_ms");
-    Stream<String> temp = Arrays.stream(text.split("\\s+"));
-    this.tags = temp
-      .filter(x -> x.startsWith("#")).
-        map(x -> x.substring(1))
-      .collect(Collectors.toList());
-    this.users = temp
-      .filter(x -> x.startsWith("@")).
-        map(x -> x.substring(1))
-      .collect(Collectors.toList());
   }
 
   public Long getTimeStamp() {
@@ -91,11 +84,58 @@ public class SaveDTO {
     return timeStamp;
   }
 
+  public void setTimeStamp(Long timeStamp) {
+
+    this.timeStamp = timeStamp;
+  }
+
+  public List<String> getCompletion() {
+
+    return completion;
+  }
+
+  @Nullable
+  public List<String> getTags() {
+
+    return tags;
+  }
+
+  public void setTags(List<String> tags) {
+
+    this.tags = tags;
+  }
+
+  @Nullable
+  public List<String> getUsers() {
+
+    return users;
+  }
+
+  public void setUsers(List<String> users) {
+
+    this.users = users;
+  }
+
+  public String createSaveRequest(String save) {
+
+    return save
+      .replace("setId", getId())
+      .replace("setTags", gson.toJson(getTags()))
+      .replace("setUsers", gson.toJson(getUsers()))
+      .replace("setInput", gson.toJson(getCompletion()))
+      .replace("\"[", "[")
+      .replace("]\"", "]")
+      .replace("setMessage", getText().replace("\"", "\\\""))
+      .replace("setTimeStamp", getTimeStamp().toString())
+      .replace("setUserLocation", getUserLocation());
+  }
+
   @Override
   public String toString() {
 
-    return "person: "
-           + id
+    return "person: " + id
+           + ", time: "
+           + timeStamp
            + ", message: "
            + text;
   }

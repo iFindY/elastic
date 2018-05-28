@@ -6,7 +6,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
-import org.elasticsearch.rest.RestStatus;
+import org.elasticsearch.client.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,7 +24,7 @@ public class AspectLog {
 
   }
 
-  @Pointcut("execution (org.elasticsearch.rest.RestStatus de.arkadi.elasticsearch.elasticsearch.repository.*.*(..))")
+  @Pointcut("execution (org.elasticsearch.client.Response de.arkadi.elasticsearch.elasticsearch.repository.*.*(..))")
   private void reposet() {
 
   }
@@ -56,16 +56,16 @@ public class AspectLog {
   }
 
   @AfterReturning(pointcut = "reposet()", returning = "result")
-  public void logSaveRepository(JoinPoint joinPoint, RestStatus result) {
+  public void logSaveRepository(JoinPoint joinPoint, Response result) {
 
     String signature = joinPoint.getSignature().getName();
     List<String> query = Arrays.stream(joinPoint.getArgs())
       .map(Object::toString)
       .collect(Collectors.toList());
-    log.info(" method: '{}'  received: '{}' and returned: '{}'",
+    log.info("method: '{}'  received: '{}' and returned: '{}'",
              signature,
-             query.toString(),
-             result.toString());
+             query.toString().replace("\n",""),
+             result.getStatusLine().getReasonPhrase());
   }
 
 }

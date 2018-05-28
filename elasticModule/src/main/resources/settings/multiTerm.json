@@ -1,0 +1,7 @@
+{
+  "query": {
+    "terms": {
+      "tags.keyword": "?"
+    }
+  }
+}
