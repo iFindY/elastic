@@ -6,27 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a4558b4-5157-4988-a349-511bb579ae01" name="Default" comment="working copy">
-      <change afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/bool.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/completion.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/edgeGramCompletion.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/match.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/matchPhrase.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/multiMatch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/multiTerm.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/save.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Elastic_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/build.gradle" afterDir="false" />
+    <list default="true" id="5a4558b4-5157-4988-a349-511bb579ae01" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/edgeGramCompletion.json" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/settings/edgeGramCompletion.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -73,11 +55,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bool.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/bool.json">
+      <file leaf-file-name="MessageRepository.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+            <state relative-caret-position="471">
+              <caret line="78" column="41" lean-forward="true" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+              <folding>
+                <element signature="method#init#0;class#MessageRepository#0" />
+                <element signature="method#save#0;class#MessageRepository#0" />
+                <element signature="method#save#1;class#MessageRepository#0" />
+                <element signature="method#saveAll#0;class#MessageRepository#0" />
+                <element signature="method#deleteById#0;class#MessageRepository#0" />
+                <element signature="method#termTag#0;class#MessageRepository#0" />
+                <element signature="method#matchText#0;class#MessageRepository#0" />
+                <element signature="method#matchPhraseText#0;class#MessageRepository#0" />
+                <element signature="method#matchAll#0;class#MessageRepository#0" />
+                <element signature="method#createIndex#0;class#MessageRepository#0" />
+                <element signature="method#deleteIndex#0;class#MessageRepository#0" />
+                <element signature="method#createIndexRest#0;class#MessageRepository#0" />
+                <element signature="method#assembleIndexRequest#0;class#MessageRepository#0" />
+                <element signature="method#getResult#0;class#MessageRepository#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,6 +117,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="arkadi" />
         <option value="arkadi &lt;arkadij0390@outlook.com&gt;" />
       </list>
     </option>
@@ -702,7 +701,6 @@
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaProducerResult.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AppConfig.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/save.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java" />
@@ -711,13 +709,15 @@
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/settings.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/match.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/multiMatch.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/multiTerm.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/matchPhrase.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/completion.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/bool.json" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/edgeGramCompletion.json" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" />
       </list>
     </option>
   </component>
@@ -849,7 +849,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="elastic&#9;RUN_CONFIGURATION&#9;elastic [build]&#10;repo&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;sett&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/settings.json&#10;mapp&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/mapping.json&#10;mapping&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/mapping.json&#10;settings&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/settings.json&#10;save&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.model.SaveDTO&#10;kaf&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java&#10;log&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java&#10;Log&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java&#10;Repository&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;bu&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/build.gradle&#10;config&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java&#10;conf&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.spring.ElasticsearchConfig&#10;build&#9;FILE&#9;jar:///Users/arkadi/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.2.3/2d57735181af32d4bc74ac87238b9ef7bc0ccdf4/elasticsearch-6.2.3-sources.jar!/org/elasticsearch/index/query/MatchQueryBuilder.java&#10;commit&#9;ACTION&#9;CheckinProject&#10;run&#9;ACTION&#9;ActivateRunToolWindow&#10;build proj&#9;ACTION&#9;CompileDirty&#10;build p&#9;PSI&#9;JAVA://org.springframework.boot.info.BuildProperties&#10;gradle&#9;ACTION&#9;ActivateGradleToolWindow&#10;structure&#9;ACTION&#9;ActivateStructureToolWindow&#10;app&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AppConfig.java&#10;proper&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;gradle:build&#9;null&#9;null&#10;properties&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;Kafka&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.kafka.KafkaConsumerSave&#10;Save&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" />
+    <property name="SearchEverywhereHistoryKey" value="conf&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.spring.ElasticsearchConfig&#10;kafka&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.kafka.KafkaConsumerSave&#10;repos&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;elastic&#9;RUN_CONFIGURATION&#9;elastic [build]&#10;repo&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;sett&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/settings.json&#10;mapp&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/mapping.json&#10;mapping&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/mapping.json&#10;settings&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/settings.json&#10;save&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.model.SaveDTO&#10;kaf&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java&#10;log&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java&#10;Log&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java&#10;Repository&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;bu&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/build.gradle&#10;config&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java&#10;build&#9;FILE&#9;jar:///Users/arkadi/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.2.3/2d57735181af32d4bc74ac87238b9ef7bc0ccdf4/elasticsearch-6.2.3-sources.jar!/org/elasticsearch/index/query/MatchQueryBuilder.java&#10;commit&#9;ACTION&#9;CheckinProject&#10;run&#9;ACTION&#9;ActivateRunToolWindow&#10;build proj&#9;ACTION&#9;CompileDirty&#10;build p&#9;PSI&#9;JAVA://org.springframework.boot.info.BuildProperties&#10;gradle&#9;ACTION&#9;ActivateGradleToolWindow&#10;structure&#9;ACTION&#9;ActivateStructureToolWindow&#10;app&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AppConfig.java&#10;proper&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;gradle:build&#9;null&#9;null&#10;properties&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;Kafka&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.kafka.KafkaConsumerSave&#10;Save&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -879,7 +879,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.elastic [build]">
+  <component name="RunManager" selected="Spring Boot.elastic [run]">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -1048,7 +1048,7 @@
       <workItem from="1526752578692" duration="25140000" />
       <workItem from="1526808191642" duration="6412000" />
       <workItem from="1526976944020" duration="254000" />
-      <workItem from="1527542692640" duration="231000" />
+      <workItem from="1527542692640" duration="2969000" />
     </task>
     <task id="LOCAL-00001" summary="new design">
       <created>1523300567154</created>
@@ -1064,11 +1064,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523979503845</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="new queries">
+      <created>1527543192083</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1527543192083</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224174000" />
+    <option name="totallyTimeSpent" value="226912000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1081,9 +1088,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.503231" side_tool="true" weight="0.6161202" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3251366" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50080776" side_tool="true" weight="0.3251366" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32956383" />
@@ -1093,21 +1102,20 @@
       <window_info anchor="bottom" id="Spring" order="7" weight="0.58110017" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32863188" />
       <window_info id="Designer" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.483965" visible="true" weight="0.2224919" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.483965" weight="0.2224919" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Gradle" order="5" sideWeight="0.112021856" weight="0.20859376" />
       <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Structure" order="1" sideWeight="0.88797814" side_tool="true" weight="0.20859376" />
+      <window_info anchor="right" id="Structure" order="1" sideWeight="0.88797814" side_tool="true" visible="true" weight="0.2079288" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" x="-304" y="-1058" width="1862" height="1058" id="Debug" order="3" type="FLOATING" weight="0.5942623" />
+      <window_info anchor="bottom" x="493" y="396" width="837" height="547" id="Debug" order="3" type="FLOATING" weight="0.5942623" />
       <window_info id="Favorites" order="4" sideWeight="0.5136612" side_tool="true" weight="0.2375" />
       <window_info id="Web" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.3251366" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="13" weight="0.3275" />
@@ -1159,7 +1167,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new design" />
     <MESSAGE value="working copy" />
-    <option name="LAST_COMMIT_MESSAGE" value="working copy" />
+    <MESSAGE value="new queries" />
+    <option name="LAST_COMMIT_MESSAGE" value="new queries" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1171,24 +1180,10 @@
           <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="96" />
+      <option name="time" value="99" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/bool.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/bool.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1259,13 +1254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.2/8c1ab37cb37a04678788316d6c560078bc56d885/jopt-simple-5.0.2-sources.jar!/joptsimple/internal/Strings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1305,6 +1293,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1627,13 +1618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://SpringLocalModels/de.arkadi.elasticsearch.spring.AppConfig">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1670,7 +1654,7 @@
           <settings layout="Hierarchic Group" zoom="1.0" x="265.0" y="100.0" />
           <SelectedNodes />
           <Categories>
-            <Category>Show filesets as groups</Category>
+            <Category />
           </Categories>
           <SCOPE>All</SCOPE>
         </state>
@@ -1691,7 +1675,7 @@
             <node>de.arkadi.elasticsearch.spring.ElasticsearchConfig</node>
           </SelectedNodes>
           <Categories>
-            <Category>Show filesets as groups</Category>
+            <Category />
           </Categories>
           <SCOPE>All</SCOPE>
         </state>
@@ -1755,7 +1739,7 @@
           <settings layout="Hierarchic Group" zoom="1.0" x="303.0" y="100.0" />
           <SelectedNodes />
           <Categories>
-            <Category>Show filesets as groups</Category>
+            <Category />
           </Categories>
           <SCOPE>All</SCOPE>
         </state>
@@ -2690,7 +2674,7 @@
           <settings layout="Hierarchic Group" zoom="0.5828007824195125" x="1387.0" y="572.0" />
           <SelectedNodes />
           <Categories>
-            <Category>Local context</Category>
+            <Category />
             <Category>Properties</Category>
           </Categories>
           <SCOPE>All</SCOPE>
@@ -2732,48 +2716,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="189" column="79" lean-forward="true" selection-start-line="189" selection-start-column="79" selection-end-line="189" selection-end-column="79" />
-          <folding>
-            <element signature="method#init#0;class#MessageRepository#0" />
-            <element signature="method#save#0;class#MessageRepository#0" />
-            <element signature="method#save#1;class#MessageRepository#0" />
-            <element signature="method#saveAll#0;class#MessageRepository#0" />
-            <element signature="method#deleteById#0;class#MessageRepository#0" />
-            <element signature="method#termTag#0;class#MessageRepository#0" />
-            <element signature="method#matchText#0;class#MessageRepository#0" />
-            <element signature="method#matchPhraseText#0;class#MessageRepository#0" />
-            <element signature="method#matchAll#0;class#MessageRepository#0" />
-            <element signature="method#getCompletion#0;class#MessageRepository#0" />
-            <element signature="method#createIndex#0;class#MessageRepository#0" />
-            <element signature="method#deleteIndex#0;class#MessageRepository#0" />
-            <element signature="method#createIndexRest#0;class#MessageRepository#0" />
-            <element signature="method#assembleIndexRequest#0;class#MessageRepository#0" />
-            <element signature="method#getResult#0;class#MessageRepository#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/save.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/match.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -2798,13 +2744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/completion.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/multiTerm.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -2814,8 +2753,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/bool.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        <state relative-caret-position="253">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/completion.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/edgeGramCompletion.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/match.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="83" column="24" lean-forward="true" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch.client/elasticsearch-rest-client/6.2.3/c4d80676fbaf353cbbd774042e404f56c2813d9d/elasticsearch-rest-client-6.2.3-sources.jar!/org/elasticsearch/client/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+          <folding>
+            <element signature="e#2961#2962#0" expanded="true" />
+            <element signature="e#3004#3005#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="78" column="41" lean-forward="true" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+          <folding>
+            <element signature="method#init#0;class#MessageRepository#0" />
+            <element signature="method#save#0;class#MessageRepository#0" />
+            <element signature="method#save#1;class#MessageRepository#0" />
+            <element signature="method#saveAll#0;class#MessageRepository#0" />
+            <element signature="method#deleteById#0;class#MessageRepository#0" />
+            <element signature="method#termTag#0;class#MessageRepository#0" />
+            <element signature="method#matchText#0;class#MessageRepository#0" />
+            <element signature="method#matchPhraseText#0;class#MessageRepository#0" />
+            <element signature="method#matchAll#0;class#MessageRepository#0" />
+            <element signature="method#createIndex#0;class#MessageRepository#0" />
+            <element signature="method#deleteIndex#0;class#MessageRepository#0" />
+            <element signature="method#createIndexRest#0;class#MessageRepository#0" />
+            <element signature="method#assembleIndexRequest#0;class#MessageRepository#0" />
+            <element signature="method#getResult#0;class#MessageRepository#0" />
+          </folding>
         </state>
       </provider>
     </entry>
