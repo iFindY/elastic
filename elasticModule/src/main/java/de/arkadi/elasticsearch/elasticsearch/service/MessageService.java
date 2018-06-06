@@ -24,6 +24,8 @@ public interface MessageService {
 
   void multiMatchTagText(RequestDTO requestDTO);
 
+  List getStateCompletion(String requestDTO);
+
   ResultDTO findAll();
 
 }

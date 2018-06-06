@@ -1,6 +1,7 @@
 package de.arkadi.elasticsearch.restController;
 
 import de.arkadi.elasticsearch.elasticsearch.service.MessageService;
+import de.arkadi.elasticsearch.model.RequestDTO;
 import de.arkadi.elasticsearch.model.ResultDTO;
 import de.arkadi.elasticsearch.model.SaveDTO;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,5 +50,12 @@ public class WebRestController {
 
     return messageService.matchText(message);
   }*/
+
+  @GetMapping(value = "/stateCompletion")
+  public List getCompleation(@RequestParam("request") String request) {
+
+    return messageService.getStateCompletion(request);
+
+  }
 
 }

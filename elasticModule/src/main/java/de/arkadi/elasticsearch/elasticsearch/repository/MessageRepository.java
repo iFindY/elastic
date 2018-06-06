@@ -261,7 +261,12 @@ public class MessageRepository {
           .get(0)).get("options");
 
     return completion.stream()
-      .map(x -> (String) ((HashMap<String, Object>) x.get("_source")).get("userLocation"))
+      .map(x -> {
+        HashMap temp =new HashMap<String,String>();
+        temp.put("location", ((HashMap<String, Object>) x.get("_source")).get("userLocation"));
+        temp.put("id", ((HashMap<String, Object>) x.get("_source")).get("id"));
+        return temp;
+      })
       .distinct()
       .collect(Collectors.toList());
   }

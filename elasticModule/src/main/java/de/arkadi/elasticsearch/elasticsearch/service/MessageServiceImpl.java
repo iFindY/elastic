@@ -124,4 +124,16 @@ public class MessageServiceImpl implements MessageService {
     }
     return null;
   }
+
+  @Override public List getStateCompletion(String request) {
+
+    try {
+      return messageRepository.getStateCompletion(request);
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    return null;
+  }
 }
