@@ -95,6 +95,14 @@ public class KafkaConfig {
   }
 
   @Bean
+  public ConsumerFactory<String, RequestDTO> consumerFactoryCompletion() {
+
+    return new DefaultKafkaConsumerFactory<>(consumerConfig(),
+                                             new StringDeserializer(),
+                                             new JsonDeserializer<>(RequestDTO.class));
+  }
+
+  @Bean
   public ProducerFactory<String, ResultDTO> producerFactory() {
 
     return new DefaultKafkaProducerFactory<>(producerConfigs());
@@ -132,6 +140,16 @@ public class KafkaConfig {
     ConcurrentKafkaListenerContainerFactory<String, DeleteDTO> factory
       = new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactoryDelete());
+
+    return factory;
+  }
+
+  @Bean
+  public ConcurrentKafkaListenerContainerFactory<String, RequestDTO> kafkaListenerContainerFactoryCompletion() {
+
+    ConcurrentKafkaListenerContainerFactory<String, RequestDTO> factory
+      = new ConcurrentKafkaListenerContainerFactory<>();
+    factory.setConsumerFactory(consumerFactoryCompletion());
 
     return factory;
   }

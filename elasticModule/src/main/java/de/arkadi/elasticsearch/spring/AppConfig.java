@@ -3,12 +3,10 @@ package de.arkadi.elasticsearch.spring;
 import de.arkadi.elasticsearch.elasticsearch.repository.MessageRepository;
 import de.arkadi.elasticsearch.elasticsearch.service.MessageService;
 import de.arkadi.elasticsearch.elasticsearch.service.MessageServiceImpl;
-import de.arkadi.elasticsearch.kafka.KafkaConsumerDelete;
-import de.arkadi.elasticsearch.kafka.KafkaConsumerSave;
-import de.arkadi.elasticsearch.kafka.KafkaConsumerSearch;
-import de.arkadi.elasticsearch.kafka.KafkaProducerResult;
+import de.arkadi.elasticsearch.kafka.*;
 import de.arkadi.elasticsearch.model.ResultDTO;
 
+import de.arkadi.elasticsearch.restController.WebRestController;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration;
@@ -39,6 +37,14 @@ public class AppConfig {
   }
 
   @Bean
+  public KafkaProducerCompletion kafkaProducerCompletion(KafkaTemplate<String, ResultDTO> kafkaTemplate,
+                                                         @Value("${kafka.out.completion.topic}")
+                                                           String kafkaOutTopic) {
+
+    return new KafkaProducerCompletion(kafkaTemplate, kafkaOutTopic);
+  }
+
+  @Bean
   public KafkaConsumerSave kafkaConsumerSave(MessageService messageService) {
 
     return new KafkaConsumerSave(messageService);
@@ -57,10 +63,17 @@ public class AppConfig {
   }
 
   @Bean
-  public MessageService messageService(MessageRepository messageRepository,
-                                       KafkaProducerResult kafkaProducer) {
+  public KafkaConsumerCompletion kafkaConsumerCompletion(MessageService messageService) {
 
-    return new MessageServiceImpl(messageRepository, kafkaProducer);
+    return new KafkaConsumerCompletion(messageService);
+  }
+
+  @Bean
+  public MessageService messageService(MessageRepository messageRepository,
+                                       KafkaProducerResult kafkaProducer,
+                                       KafkaProducerCompletion kafkaProducerCompletion) {
+
+    return new MessageServiceImpl(messageRepository, kafkaProducer, kafkaProducerCompletion);
   }
 
   @Bean
@@ -73,5 +86,11 @@ public class AppConfig {
   public AspectLog aspect() {
 
     return new AspectLog();
+  }
+
+  @Bean
+  public WebRestController webRestController(MessageService messageService) {
+
+    return new WebRestController(messageService);
   }
 }

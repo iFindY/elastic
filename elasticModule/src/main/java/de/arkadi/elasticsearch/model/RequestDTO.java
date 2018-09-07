@@ -17,13 +17,7 @@ public class RequestDTO {
     this.request_id = request_id;
     this.answer_partition = answer_partition;
     this.text = text;
-  }
-
-  public RequestDTO(ArrayList<String> tags, Integer request_id, Integer answer_partition) {
-
-    this.request_id = request_id;
-    this.answer_partition = answer_partition;
-    this.tags = tags;
+    this.tags = new ArrayList<>();
   }
 
   public RequestDTO() {
@@ -70,17 +64,4 @@ public class RequestDTO {
     this.tags = tags;
   }
 
-  @Override
-  public String toString() {
-
-    return "request id: "
-           + request_id
-           + ", answer partition: "
-           + answer_partition
-           + ", text "
-           + text
-           + ", tags "
-           + tags.toString();
-
-  }
 }

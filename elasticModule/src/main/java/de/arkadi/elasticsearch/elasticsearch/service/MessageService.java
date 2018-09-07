@@ -24,7 +24,10 @@ public interface MessageService {
 
   void multiMatchTagText(RequestDTO requestDTO);
 
+  void getStateCompletionKafka(RequestDTO requestDTO);
+
   List getStateCompletion(String requestDTO);
+
 
   ResultDTO findAll();
 

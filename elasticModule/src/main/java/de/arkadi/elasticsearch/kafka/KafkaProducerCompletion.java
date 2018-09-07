@@ -5,14 +5,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 
-public class KafkaProducerResult {
+public class KafkaProducerCompletion {
 
-  private static final Logger log = LoggerFactory.getLogger(KafkaProducerResult.class);
+  private static final Logger log = LoggerFactory.getLogger(KafkaProducerCompletion.class);
   private final KafkaTemplate<String, ResultDTO> kafkaTemplate;
 
   private String kafkaTopic;
 
-  public KafkaProducerResult(KafkaTemplate<String, ResultDTO> kafkaTemplate, String kafkaTopic) {
+  public KafkaProducerCompletion(KafkaTemplate<String, ResultDTO> kafkaTemplate,
+                                 String kafkaTopic) {
 
     this.kafkaTemplate = kafkaTemplate;
     this.kafkaTopic = kafkaTopic;
@@ -22,4 +23,5 @@ public class KafkaProducerResult {
 
     kafkaTemplate.send(kafkaTopic, result);
   }
+
 }

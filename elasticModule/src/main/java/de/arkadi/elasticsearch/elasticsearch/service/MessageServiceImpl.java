@@ -1,6 +1,7 @@
 package de.arkadi.elasticsearch.elasticsearch.service;
 
 import de.arkadi.elasticsearch.elasticsearch.repository.MessageRepository;
+import de.arkadi.elasticsearch.kafka.KafkaProducerCompletion;
 import de.arkadi.elasticsearch.kafka.KafkaProducerResult;
 import de.arkadi.elasticsearch.model.RequestDTO;
 import de.arkadi.elasticsearch.model.ResultDTO;
@@ -13,12 +14,15 @@ public class MessageServiceImpl implements MessageService {
 
   private MessageRepository messageRepository;
   private KafkaProducerResult kafkaProducer;
+  private KafkaProducerCompletion kafkaProducerCompletion;
 
   public MessageServiceImpl(MessageRepository messageRepository,
-                            KafkaProducerResult kafkaProducer) {
+                            KafkaProducerResult kafkaProducer,
+                            KafkaProducerCompletion kafkaProducerCompletion) {
 
     this.messageRepository = messageRepository;
     this.kafkaProducer = kafkaProducer;
+    this.kafkaProducerCompletion = kafkaProducerCompletion;
   }
 
   @Override
@@ -125,9 +129,11 @@ public class MessageServiceImpl implements MessageService {
     return null;
   }
 
-  @Override public List getStateCompletion(String request) {
+  @Override
+  public List getStateCompletion(String request) {
 
     try {
+
       return messageRepository.getStateCompletion(request);
     }
     catch (IOException e) {
@@ -136,4 +142,19 @@ public class MessageServiceImpl implements MessageService {
 
     return null;
   }
+
+  @Override
+  public void getStateCompletionKafka(RequestDTO request) {
+
+    try {
+      List list = messageRepository.getStateCompletion(request.getText());
+      ResultDTO result = new ResultDTO(list);
+      kafkaProducerCompletion.send(result);
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
+
+  }
+
 }
