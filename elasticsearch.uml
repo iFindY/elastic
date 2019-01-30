@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>de.arkadi.elasticsearch</OriginalElement>
+  <nodes>
+    <node x="237.2705529675638" y="100.0">de.arkadi.elasticsearch.elasticsearch.repository</node>
+    <node x="81.2705529675638" y="100.0">de.arkadi.elasticsearch.kafka</node>
+    <node x="136.7794815389924" y="200.0">de.arkadi.elasticsearch.elasticsearch.service</node>
+    <node x="41.28125" y="280.0">de.arkadi.elasticsearch.restController</node>
+    <node x="128.5101147342995" y="0.0">de.arkadi.elasticsearch.model</node>
+    <node x="123.58186680469291" y="390.0">de.arkadi.elasticsearch.spring</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="de.arkadi.elasticsearch.restController" target="de.arkadi.elasticsearch.elasticsearch.service">
+      <point x="0.0" y="-15.0" />
+      <point x="129.28125" y="255.0" />
+      <point x="153.4044815389924" y="255.0" />
+      <point x="-49.875" y="15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.kafka">
+      <point x="-28.666666666666686" y="-15.0" />
+      <point x="159.41520013802622" y="350.0" />
+      <point x="26.0" y="350.0" />
+      <point x="26.0" y="180.0" />
+      <point x="125.55626725327808" y="180.0" />
+      <point x="-17.714285714285722" y="15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.elasticsearch.service">
+      <point x="14.333333333333343" y="-15.0" />
+      <point x="202.41520013802625" y="340.0" />
+      <point x="232.85416666666669" y="340.0" />
+      <point x="232.85416666666669" y="255.0" />
+      <point x="219.9044815389924" y="255.0" />
+      <point x="16.625" y="15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.restController">
+      <point x="-14.333333333333343" y="-15.0" />
+      <point x="173.74853347135956" y="340.0" />
+      <point x="85.28125" y="340.0" />
+      <point x="-44.0" y="15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.kafka" target="de.arkadi.elasticsearch.elasticsearch.service">
+      <point x="53.14285714285717" y="15.0" />
+      <point x="196.41341011042095" y="180.0" />
+      <point x="194.9669815389924" y="180.0" />
+      <point x="-8.3125" y="-15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.elasticsearch.service" target="de.arkadi.elasticsearch.kafka">
+      <point x="-58.1875" y="-15.0" />
+      <point x="145.0919815389924" y="180.0" />
+      <point x="143.2705529675638" y="180.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.elasticsearch.repository">
+      <point x="57.33333333333335" y="-15.0" />
+      <point x="245.41520013802625" y="370.0" />
+      <point x="350.9089673913044" y="370.0" />
+      <point x="350.9089673913044" y="180.0" />
+      <point x="371.1455529675638" y="180.0" />
+      <point x="57.375" y="15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.kafka" target="de.arkadi.elasticsearch.model">
+      <point x="-41.33333333333334" y="-15.0" />
+      <point x="101.93721963423046" y="70.0" />
+      <point x="164.06567028985506" y="70.0" />
+      <point x="-28.444444444444443" y="15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.elasticsearch.service" target="de.arkadi.elasticsearch.elasticsearch.repository">
+      <point x="41.5625" y="-15.0" />
+      <point x="244.8419815389924" y="180.0" />
+      <point x="256.3955529675638" y="180.0" />
+      <point x="-57.375" y="15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.spring">
+      <point x="32.25" y="15.0" />
+      <point x="220.3318668046929" y="450.0" />
+      <point x="93.58186680469291" y="450.0" />
+      <point x="93.58186680469291" y="397.5" />
+      <point x="-64.5" y="-7.5" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.elasticsearch.service" target="de.arkadi.elasticsearch.model">
+      <point x="24.9375" y="-15.0" />
+      <point x="228.2169815389924" y="180.0" />
+      <point x="226.7705529675638" y="180.0" />
+      <point x="226.7705529675638" y="80.0" />
+      <point x="220.95455917874395" y="80.0" />
+      <point x="28.444444444444457" y="15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.restController" target="de.arkadi.elasticsearch.model">
+      <point x="-58.66666666666666" y="-15.0" />
+      <point x="70.61458333333334" y="255.0" />
+      <point x="50.7705529675638" y="255.0" />
+      <point x="50.7705529675638" y="60.0" />
+      <point x="149.84344806763283" y="60.0" />
+      <point x="-42.66666666666666" y="15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.elasticsearch.repository" target="de.arkadi.elasticsearch.model">
+      <point x="-38.25" y="-15.0" />
+      <point x="275.5205529675638" y="80.0" />
+      <point x="235.17678140096618" y="80.0" />
+      <point x="42.666666666666686" y="15.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.kafka" target="de.arkadi.elasticsearch.kafka">
+      <point x="-53.14285714285715" y="15.0" />
+      <point x="90.12769582470665" y="150.0" />
+      <point x="61.2705529675638" y="150.0" />
+      <point x="61.2705529675638" y="115.0" />
+      <point x="-62.0" y="-0.0" />
+    </edge>
+    <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.model">
+      <point x="-57.33333333333337" y="-15.0" />
+      <point x="130.74853347135954" y="370.0" />
+      <point x="4.0" y="370.0" />
+      <point x="4.0" y="50.0" />
+      <point x="135.6212258454106" y="50.0" />
+      <point x="-56.888888888888886" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.1496789087497241" x="266.39310183708426" y="178.3073234487668" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

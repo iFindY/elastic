@@ -8,27 +8,25 @@ import java.util.List;
 
 public interface MessageService {
 
-  void save(SaveDTO message);
+    void save(SaveDTO message);
 
-  void save(String id, String message, List tags);
+    void save(String id, String message, List tags);
 
-  void saveAll(List<SaveDTO> message);
+    void saveAll(List<SaveDTO> message);
 
-  void deleteById(String id);
+    void deleteById(String id);
 
-  void termTag(RequestDTO requestDTO);
+    void termTag(RequestDTO requestDTO);
 
-  void matchText(RequestDTO message);
+    void matchText(RequestDTO message);
 
-  void matchPhraseText(RequestDTO requestDTO);
+    void matchPhraseText(RequestDTO requestDTO);
 
-  void multiMatchTagText(RequestDTO requestDTO);
+    void multiMatchTagText(RequestDTO requestDTO);
 
-  void getStateCompletionKafka(RequestDTO requestDTO);
+    void getStateCompletionKafka(RequestDTO requestDTO);
 
-  List getStateCompletion(String requestDTO);
+    List getStateCompletionRest(String requestDTO);
 
-
-  ResultDTO findAll();
-
+    ResultDTO findAll();
 }

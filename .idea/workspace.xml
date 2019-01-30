@@ -7,13 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a4558b4-5157-4988-a349-511bb579ae01" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Elastic_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaProducerCompletion.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaProducerCompletion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/restController/WebRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/restController/WebRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticModule/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/elasticModule/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -21,11 +21,24 @@
     <ignored path="$PROJECT_DIR$/elasticModule/build/" />
     <ignored path="$PROJECT_DIR$/elasticModule/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -55,16 +68,123 @@
       </state>
     </system>
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1578468782">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="50" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="20" />
+          <entry key="project.open.time.6" value="19" />
+          <entry key="project.open.time.7" value="6" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="50" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="MF" value="2" />
+          <entry key="elasticsearch" value="1" />
+          <entry key="gradle" value="5" />
+          <entry key="gradlew" value="1" />
+          <entry key="java" value="19" />
+          <entry key="json" value="9" />
+          <entry key="properties" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Groovy" value="5" />
+          <entry key="JAVA" value="19" />
+          <entry key="JSON" value="9" />
+          <entry key="Manifest" value="2" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="2" />
+          <entry key="UML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gradle" value="349" />
+          <entry key="java" value="176" />
+          <entry key="txt" value="85" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Groovy" value="349" />
+          <entry key="JAVA" value="176" />
+          <entry key="PLAIN_TEXT" value="85" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="Elastic" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MessageRepository.java" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="218" column="8" lean-forward="true" selection-start-line="218" selection-start-column="8" selection-end-line="218" selection-end-column="8" />
+            <state relative-caret-position="154">
+              <caret line="258" lean-forward="true" selection-start-line="258" selection-end-line="258" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="149" column="46" selection-start-line="149" selection-start-column="46" selection-end-line="149" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/completion.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/RequestDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/DeleteDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2128">
+              <caret line="120" column="15" selection-start-line="120" selection-start-column="11" selection-end-line="120" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -89,7 +209,6 @@
       <find>ConsumerFactory</find>
       <find>kafka.consumer.group</find>
       <find>save</find>
-      <find>log</find>
       <find>USER_TWEET_SEARCH_TEXT_ANSWER_ELASTIC_SEARCH</find>
       <find>tags</find>
       <find>static</find>
@@ -102,6 +221,11 @@
       <find>test</find>
       <find>multi</find>
       <find>port</find>
+      <find>log</find>
+      <find>include</find>
+      <find>public Response save(</find>
+      <find>compl</find>
+      <find>getStateCompletion</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,7 +241,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\Arkadi\.gradle\wrapper\dists\gradle-4.0-all\ac27o8rbd0ic8ih41or9l32mv\gradle-4.0" />
+        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -465,7 +589,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6102084622749" />
+        <entry key="$PROJECT_DIR$" value="6139059084000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/elasticModule/build.gradle" value="1839006058" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="566444372" />
@@ -492,14 +616,14 @@
                         <option name="entries">
                           <list>
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/1.5.10.RELEASE/1ec12545970356c867b330319c17fbe88095383b/spring-boot-gradle-plugin-1.5.10.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/1.5.10.RELEASE/9b2a9e4d0021ca3ff8ab6689a42df20f94ece41/spring-boot-gradle-plugin-1.5.10.RELEASE.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.5.10.RELEASE/10108d98101e646028b493bbb39e9c97674db7c/spring-boot-loader-tools-1.5.10.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.5.10.RELEASE/1defe7e7f9d7f6d03aa7f93d21cfd20e67e4a0f6/spring-boot-loader-tools-1.5.10.RELEASE.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/1.0.4.RELEASE/f56e13eea5c5d3640efb34dc0f55b1369000fe32/dependency-management-plugin-1.0.4.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/1.0.4.RELEASE/f5b1df47ed5f708faa4d2fe0a71eb7fd36e11696/dependency-management-plugin-1.0.4.RELEASE.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.14.RELEASE/89a3dd5902381363686fa8fb737e3c028cedca53/spring-core-4.3.14.RELEASE-sources.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.14.RELEASE/c70ddb6204457a802d1f6882d65bca3e5b3c41df/spring-core-4.3.14.RELEASE.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/ecf26c7507d67782a3bbd148d170b31dfad001aa/commons-logging-1.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-gradle-plugin/1.5.10.RELEASE/9b2a9e4d0021ca3ff8ab6689a42df20f94ece41/spring-boot-gradle-plugin-1.5.10.RELEASE.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.5.10.RELEASE/1defe7e7f9d7f6d03aa7f93d21cfd20e67e4a0f6/spring-boot-loader-tools-1.5.10.RELEASE.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.spring.gradle/dependency-management-plugin/1.0.4.RELEASE/f5b1df47ed5f708faa4d2fe0a71eb7fd36e11696/dependency-management-plugin-1.0.4.RELEASE.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.14.RELEASE/c70ddb6204457a802d1f6882d65bca3e5b3c41df/spring-core-4.3.14.RELEASE.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar" />
                           </list>
                         </option>
@@ -512,140 +636,138 @@
               <option name="name" value="Elastic" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/announce" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/antlr" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/base-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/base-services-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/build-cache-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/build-comparison" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/build-init" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/cli" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/code-quality" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/composite-builds" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/dependency-management" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/diagnostics" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ear" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ide" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ide-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ide-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/installation-beacon" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/internal-android-performance-testing" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/internal-integ-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/internal-performance-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/internal-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ivy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/jacoco" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/javascript" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/jvm-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-java" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-scala" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/launcher" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/logging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/maven" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/messaging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/model-core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/model-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/osgi" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/platform-base" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/platform-jvm" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/platform-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/platform-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/plugin-development" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/plugin-use" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/plugins" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/process-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/publish" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/reporting" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources-s3" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources-sftp" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/launcher" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/announce" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/signing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/test-kit" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/testing-base" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/testing-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/installation-beacon" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/jvm-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/native" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/tooling-api" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/tooling-api-builders" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/workers" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/platform-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ivy" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/wrapper" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/ant-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/ant-launcher-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-base-services-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-base-services-groovy-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-cli-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/process-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/plugins" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/antlr" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/plugin-use" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/maven" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/testing-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/osgi" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/internal-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/composite-builds" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/model-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/test-kit" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/cli" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/build-init" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ear" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/jacoco" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/build-comparison" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/publish" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/platform-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources-sftp" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/base-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/model-core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/diagnostics" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/dependency-management" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ide-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/workers" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/code-quality" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-java" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/plugin-development" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/internal-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/ide-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/base-services-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/messaging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/testing-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/tooling-api-builders" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/logging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/resources-s3" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/internal-android-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/build-cache-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-compiler-plugin-0.9.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-runtime-api-info-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-tooling-builders-0.9.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-native-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-logging-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-tooling-models-0.9.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-wrapper-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-model-core-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-core-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-docs-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-installation-beacon-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-base-services-groovy-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/ant-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-process-services-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/groovy-all-2.4.11.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-0.9.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-cli-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-docs-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-messaging-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-jvm-services-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-launcher-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-logging-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-messaging-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-model-core-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-base-services-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-model-groovy-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-native-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-process-services-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-resources-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-runtime-api-info-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-0.9.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-compiler-plugin-0.9.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-tooling-builders-0.9.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-script-kotlin-tooling-models-0.9.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-tooling-api-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/gradle-wrapper-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/groovy-all-2.4.11.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-announce-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-antlr-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-build-cache-http-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-javascript-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-platform-native-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-jacoco-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-plugins-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-build-comparison-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-build-init-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-code-quality-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-native-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-plugin-use-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ide-play-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-scala-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-tooling-api-builders-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-announce-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ear-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-publish-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-composite-builds-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-dependency-management-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-diagnostics-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ear-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ide-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ide-native-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ide-play-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ivy-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-jacoco-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-javascript-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-groovy-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-java-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-jvm-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-native-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-scala-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-maven-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-osgi-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-testing-native-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-platform-base-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-platform-jvm-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-platform-native-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-platform-play-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-jvm-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-plugin-development-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-plugin-use-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-plugins-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-publish-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-diagnostics-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ide-native-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-build-cache-http-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-workers-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-osgi-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-java-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-language-groovy-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-antlr-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-reporting-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-resources-http-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-resources-s3-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-resources-sftp-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-platform-play-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ide-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-scala-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-signing-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-test-kit-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-resources-http-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-platform-jvm-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-testing-base-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-testing-jvm-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-testing-native-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-tooling-api-builders-4.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-workers-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-build-init-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-maven-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-resources-sftp-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-signing-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-resources-s3-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-code-quality-4.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-test-kit-4.0.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/ivy-2.2.0.jar" />
-                  <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
-                  <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/lib/plugins/gradle-ivy-4.0.jar" />
                 </list>
               </option>
             </ExternalProjectBuildClasspathPojo>
@@ -660,8 +782,8 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -681,7 +803,6 @@
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/Aspect.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ApectLog.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/DeleteDTO.java" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/ResultDTO.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/RequestDTO.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerDelete.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSearch.java" />
@@ -690,8 +811,6 @@
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/save.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java" />
-        <option value="$PROJECT_DIR$/elasticModule/build.gradle" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/settings.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java" />
@@ -703,11 +822,16 @@
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/bool.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/settings/edgeGramCompletion.json" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java" />
-        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/restController/WebRestController.java" />
+        <option value="$PROJECT_DIR$/elasticModule/build.gradle" />
+        <option value="$PROJECT_DIR$/settings.gradle" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaProducerCompletion.java" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/ResultDTO.java" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java" />
         <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java" />
+        <option value="$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" />
       </list>
     </option>
   </component>
@@ -723,9 +847,23 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Angular</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -733,102 +871,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uni2018" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uni2018" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="elasticModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uni2018" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="elasticModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uni2018" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="elasticModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uni2018" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="elasticModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uni2018" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="elasticModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="elasticsearch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uni2018" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="elasticModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="elasticsearch" type="462c0819:PsiDirectoryNode" />
-              <item name="elasticsearch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uni2018" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="elasticModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="elasticsearch" type="462c0819:PsiDirectoryNode" />
-              <item name="elasticsearch" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uni2018" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="elasticModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="elasticsearch" type="462c0819:PsiDirectoryNode" />
-              <item name="elasticsearch" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uni2018" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="elasticModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uni2018" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="elasticModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="settings" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -858,25 +900,7 @@
               <item name="Elastic" type="58d84e3e:PackageViewProjectNode" />
               <item name="Elastic2018Artefact_main" type="616d4139:PackageViewModuleNode" />
               <item name="de.arkadi.elasticsearch" type="1f31426a:PackageElementNode" />
-              <item name="kafka" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Elastic2018Artefact_main" type="616d4139:PackageViewModuleNode" />
-              <item name="de.arkadi.elasticsearch" type="1f31426a:PackageElementNode" />
               <item name="model" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Elastic2018Artefact_main" type="616d4139:PackageViewModuleNode" />
-              <item name="de.arkadi.elasticsearch" type="1f31426a:PackageElementNode" />
-              <item name="restController" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Elastic" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Elastic2018Artefact_main" type="616d4139:PackageViewModuleNode" />
-              <item name="de.arkadi.elasticsearch" type="1f31426a:PackageElementNode" />
-              <item name="spring" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="Elastic" type="58d84e3e:PackageViewProjectNode" />
@@ -887,6 +911,24 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ElasticProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="Elastic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ElasticProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="elasticModule" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -896,15 +938,22 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="propert&#9;FILE&#9;file://C:/Users/Arkadi/Home/Projekte/elasticService/uni2018/elasticModule/src/main/resources/application.properties&#10;conf&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.spring.ElasticsearchConfig&#10;kafka&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.kafka.KafkaConsumerSave&#10;repos&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;elastic&#9;RUN_CONFIGURATION&#9;elastic [build]&#10;repo&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;sett&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/settings.json&#10;mapp&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/mapping.json&#10;mapping&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/mapping.json&#10;settings&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/settings.json&#10;save&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.model.SaveDTO&#10;kaf&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java&#10;log&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java&#10;Log&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java&#10;Repository&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;bu&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/build.gradle&#10;config&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java&#10;build&#9;FILE&#9;jar:///Users/arkadi/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.2.3/2d57735181af32d4bc74ac87238b9ef7bc0ccdf4/elasticsearch-6.2.3-sources.jar!/org/elasticsearch/index/query/MatchQueryBuilder.java&#10;commit&#9;ACTION&#9;CheckinProject&#10;run&#9;ACTION&#9;ActivateRunToolWindow&#10;build proj&#9;ACTION&#9;CompileDirty&#10;build p&#9;PSI&#9;JAVA://org.springframework.boot.info.BuildProperties&#10;gradle&#9;ACTION&#9;ActivateGradleToolWindow&#10;structure&#9;ACTION&#9;ActivateStructureToolWindow&#10;app&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AppConfig.java&#10;proper&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;gradle:build&#9;null&#9;null&#10;properties&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;Kafka&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.kafka.KafkaConsumerSave&#10;Save&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="servi&#9;FILE&#9;file:///Users/arkadi/GIT/ElasticProject/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java&#10;Service&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.elasticsearch.service.MessageService&#10;termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;ssh &#9;ACTION&#9;com.jetbrains.plugins.remotesdk.console.RunSshConsoleAction&#10;ssh&#9;ACTION&#9;Vcs.Show.Shelf&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;messagere&#9;FILE&#9;file:///Users/arkadi/GIT/ElasticProject/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;git&#9;ACTION&#9;Git.ContextMenu&#10;gradle ta&#9;ACTION&#9;Gradle.ExecuteTask&#10;gradle tas&#9;null&#9;null&#10;gradle &#9;ACTION&#9;Gradle.ExecuteTask&#10;task&#9;ACTION&#9;Gradle.ExecuteTask&#10;gradle&#9;ACTION&#9;ActivateGradleToolWindow&#10;build.gradle&#9;FILE&#9;file:///Users/arkadi/GIT/ElasticProject/elasticModule/build.gradle&#10;propert&#9;FILE&#9;file://C:/Users/Arkadi/Home/Projekte/elasticService/uni2018/elasticModule/src/main/resources/application.properties&#10;conf&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.spring.ElasticsearchConfig&#10;kafka&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.kafka.KafkaConsumerSave&#10;repos&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;elastic&#9;RUN_CONFIGURATION&#9;elastic [build]&#10;repo&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;sett&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/settings.json&#10;mapp&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/mapping.json&#10;mapping&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/mapping.json&#10;settings&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/settings/settings.json&#10;save&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.model.SaveDTO&#10;kaf&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerSave.java&#10;log&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java&#10;Log&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AspectLog.java&#10;Repository&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java&#10;bu&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/build.gradle&#10;config&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/ElasticsearchConfig.java&#10;build&#9;FILE&#9;jar:///Users/arkadi/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/6.2.3/2d57735181af32d4bc74ac87238b9ef7bc0ccdf4/elasticsearch-6.2.3-sources.jar!/org/elasticsearch/index/query/MatchQueryBuilder.java&#10;commit&#9;ACTION&#9;CheckinProject&#10;run&#9;ACTION&#9;ActivateRunToolWindow&#10;build proj&#9;ACTION&#9;CompileDirty&#10;build p&#9;PSI&#9;JAVA://org.springframework.boot.info.BuildProperties&#10;structure&#9;ACTION&#9;ActivateStructureToolWindow&#10;app&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/AppConfig.java&#10;proper&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;gradle:build&#9;null&#9;null&#10;properties&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/resources/application.properties&#10;Kafka&#9;PSI&#9;JAVA://de.arkadi.elasticsearch.kafka.KafkaConsumerSave&#10;Save&#9;FILE&#9;file:///Users/arkadi/IdeaProjects/uni2018/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536330942582" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.09283088" />
-    <property name="settings.editor.selected.configurable" value="editor.breadcrumbs" />
+    <property name="project.structure.side.proportion" value="0.3402299" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -926,9 +975,87 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.elastic [run]">
+  <component name="RunManager" selected="Gradle.elastic [build]">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name=" [clean assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="ElasticProject [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="ElasticProject [clean assamble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+            <option value="assamble" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="ElasticProject [clean assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration name="elastic [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -947,77 +1074,45 @@
         </option>
         <option name="vmOptions" value="" />
       </ExternalSystemSettings>
-    </configuration>
-    <configuration name="uni2018 [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="elastic [run]" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Elastic2018Artefact_main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="de.arkadi.elasticsearch.spring.Application" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
       <item itemvalue="Spring Boot.elastic [run]" />
       <item itemvalue="Gradle.elastic [build]" />
-      <item itemvalue="Gradle.uni2018 [clean build]" />
+      <item itemvalue="Gradle.ElasticProject [build]" />
+      <item itemvalue="Gradle.ElasticProject [clean assamble]" />
+      <item itemvalue="Gradle. [clean assemble]" />
+      <item itemvalue="Gradle.ElasticProject [clean assemble]" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.elastic [build]" />
-        <item itemvalue="Gradle.uni2018 [clean build]" />
+        <item itemvalue="Gradle.ElasticProject [clean assemble]" />
+        <item itemvalue="Gradle. [clean assemble]" />
+        <item itemvalue="Gradle.ElasticProject [clean assamble]" />
+        <item itemvalue="Gradle.ElasticProject [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -1025,7 +1120,6 @@
     <option name="beanDetailsProportion" value="0.3" />
   </component>
   <component name="StructureViewFactory">
-    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
     <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS" />
   </component>
   <component name="SvnConfiguration">
@@ -1098,6 +1192,56 @@
       <workItem from="1527542692640" duration="2969000" />
       <workItem from="1528298811867" duration="1014000" />
       <workItem from="1528311126585" duration="3177000" />
+      <workItem from="1533160945149" duration="2124000" />
+      <workItem from="1533245234714" duration="6710000" />
+      <workItem from="1533584560822" duration="1083000" />
+      <workItem from="1533918173998" duration="37000" />
+      <workItem from="1533918238268" duration="61000" />
+      <workItem from="1533977543207" duration="141000" />
+      <workItem from="1536325536289" duration="1216000" />
+      <workItem from="1536327689765" duration="493000" />
+      <workItem from="1536328233191" duration="383000" />
+      <workItem from="1536328650666" duration="1289000" />
+      <workItem from="1536332859064" duration="26000" />
+      <workItem from="1536505508403" duration="84000" />
+      <workItem from="1536853555585" duration="277000" />
+      <workItem from="1536853991864" duration="213000" />
+      <workItem from="1536854227104" duration="78000" />
+      <workItem from="1536854359072" duration="697000" />
+      <workItem from="1536855084206" duration="378000" />
+      <workItem from="1537134520987" duration="191000" />
+      <workItem from="1537134732897" duration="416000" />
+      <workItem from="1537184222064" duration="119000" />
+      <workItem from="1537184448030" duration="2136000" />
+      <workItem from="1537190272355" duration="10000" />
+      <workItem from="1537190359344" duration="10000" />
+      <workItem from="1537191107482" duration="2194000" />
+      <workItem from="1537350022905" duration="95000" />
+      <workItem from="1537961856048" duration="350000" />
+      <workItem from="1538004175090" duration="226000" />
+      <workItem from="1538004916673" duration="40000" />
+      <workItem from="1538004972409" duration="207000" />
+      <workItem from="1538005231755" duration="79000" />
+      <workItem from="1538005316870" duration="6000" />
+      <workItem from="1538005378391" duration="131000" />
+      <workItem from="1538005684232" duration="27000" />
+      <workItem from="1538005724727" duration="62000" />
+      <workItem from="1538005801391" duration="323000" />
+      <workItem from="1538006140193" duration="420000" />
+      <workItem from="1538006585071" duration="51000" />
+      <workItem from="1538006649371" duration="159000" />
+      <workItem from="1538006844989" duration="79000" />
+      <workItem from="1538006937503" duration="99000" />
+      <workItem from="1538007074903" duration="102000" />
+      <workItem from="1538007216338" duration="210000" />
+      <workItem from="1538007562330" duration="349000" />
+      <workItem from="1538008095098" duration="672000" />
+      <workItem from="1538008890290" duration="11000" />
+      <workItem from="1538065292351" duration="93000" />
+      <workItem from="1538222584950" duration="614000" />
+      <workItem from="1538229153818" duration="814000" />
+      <workItem from="1538322107074" duration="251000" />
+      <workItem from="1538322691768" duration="2690000" />
     </task>
     <task id="LOCAL-00001" summary="new design">
       <created>1523300567154</created>
@@ -1124,7 +1268,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232177000" />
+    <option name="totallyTimeSpent" value="260703000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1136,71 +1280,45 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.503231" side_tool="true" weight="0.6161202" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32505175" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50080776" side_tool="true" weight="0.3251366" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32956383" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49676898" weight="0.6147541" />
-      <window_info anchor="bottom" x="-252" y="-1010" width="1730" height="929" id="Run" order="2" sideWeight="0.6734375" type="FLOATING" weight="0.5546448" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.58110017" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32863188" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.51666665" weight="0.19027779" />
       <window_info id="Designer" order="1" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.483965" weight="0.22239584" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info id="Web" order="2" side_tool="true" weight="0.3297568" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" sideWeight="0.48333332" side_tool="true" weight="0.19027779" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3269781" />
-      <window_info anchor="right" id="Gradle" order="5" sideWeight="0.112021856" weight="0.20859376" />
-      <window_info anchor="right" id="SciView" order="10" />
-      <window_info anchor="right" id="Structure" order="1" sideWeight="0.88797814" side_tool="true" visible="true" weight="0.15885417" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="4" sideWeight="0.5136612" side_tool="true" weight="0.2375" />
-      <window_info anchor="bottom" x="440" y="116" width="1411" height="782" id="Debug" order="3" type="FLOATING" weight="0.5942623" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" x="58" y="182" width="1440" height="878" id="Run" order="2" sideWeight="0.6734375" type="FLOATING" weight="0.5546448" />
+      <window_info anchor="bottom" x="107" y="22" width="1440" height="878" id="Debug" order="3" type="FLOATING" weight="0.5942623" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="13" weight="0.3275" />
-      <window_info id="Web" order="3" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-    </layout>
-    <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Gradle" order="4" weight="0.184375" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49921876" weight="0.46448088" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49024707" visible="true" weight="0.19765624" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.503231" side_tool="true" weight="0.61444443" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.58110017" />
+      <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32923833" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" x="247" y="262" width="1003" height="560" id="Terminal" order="10" type="FLOATING" weight="0.3278496" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49676898" weight="0.61437124" />
+      <window_info anchor="bottom" id="Build" order="12" weight="0.3275" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3245509" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32769832" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32899868" />
-      <window_info anchor="bottom" id="Java Enterprise" order="8" />
-      <window_info id="Designer" order="3" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50078124" side_tool="true" weight="0.3510929" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Build" order="13" weight="0.32896653" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.329235" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32899868" />
-      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32956383" />
-      <window_info id="Favorites" order="5" sideWeight="0.5097529" side_tool="true" weight="0.2140625" />
-    </layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Structure" order="4" sideWeight="0.48337293" visible="true" weight="0.18194444" />
+      <window_info anchor="right" id="Gradle" order="5" sideWeight="0.110458285" weight="0.2081545" />
+      <window_info anchor="right" id="Database" order="6" sideWeight="0.4987715" weight="0.3297568" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" sideWeight="0.4987715" weight="0.32904148" />
+      <window_info anchor="right" id="SciView" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="right" id="Theme Preview" order="11" />
+      <window_info anchor="right" id="Bean Validation" order="12" sideWeight="0.4987715" weight="0.3297568" />
+      <window_info anchor="right" id="Remote Host" order="13" sideWeight="0.4987715" weight="0.3297568" />
+      <window_info anchor="right" id="Event Log" order="14" sideWeight="0.5012285" side_tool="true" weight="0.32916668" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1250,81 +1368,8 @@
     <MESSAGE value="new queries" />
     <option name="LAST_COMMIT_MESSAGE" value="new queries" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="100" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/restController/WebRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.4/6b1d345789e396d4342821ce01ddfb11dbdd50cc/gson-2.8.4-sources.jar!/com/google/gson/Gson.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch.client/elasticsearch-rest-client/6.2.3/c4d80676fbaf353cbbd774042e404f56c2813d9d/elasticsearch-rest-client-6.2.3-sources.jar!/org/elasticsearch/client/RestClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="191" column="20" selection-start-line="191" selection-start-column="20" selection-end-line="191" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/4.3.14.RELEASE/a18fff180bee3c69880a0a7d6868774eb4b77555/spring-messaging-4.3.14.RELEASE-sources.jar!/org/springframework/messaging/handler/invocation/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="186" column="35" selection-start-line="186" selection-start-column="35" selection-end-line="186" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.14.RELEASE/37d9c4ddf088364b9d9b77b12f4d1c957bb163ed/spring-aop-4.3.14.RELEASE-sources.jar!/org/springframework/aop/interceptor/ExposeInvocationInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.14.RELEASE/37d9c4ddf088364b9d9b77b12f4d1c957bb163ed/spring-aop-4.3.14.RELEASE-sources.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="178" selection-start-line="178" selection-end-line="178" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.14.RELEASE/37d9c4ddf088364b9d9b77b12f4d1c957bb163ed/spring-aop-4.3.14.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="675" selection-start-line="675" selection-end-line="675" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/Optional.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.14.RELEASE/c70ddb6204457a802d1f6882d65bca3e5b3c41df/spring-core-4.3.14.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/5.0.2/8c1ab37cb37a04678788316d6c560078bc56d885/jopt-simple-5.0.2-sources.jar!/joptsimple/internal/Strings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/lang/String.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/stream/Stream.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/KQueueArrayWrapper.class" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/rt.jar!/com/sun/istack/internal/Nullable.class" />
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/de.arkadi.elasticsearch.spring.AppConfig">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1399,20 +1444,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.kafka/spring-kafka/1.1.7.RELEASE/584bef123da5fb0571b0199068ceb4ba8fa8e3e3/spring-kafka-1.1.7.RELEASE-sources.jar!/org/springframework/kafka/annotation/KafkaBootstrapConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.kafka/spring-kafka/1.1.7.RELEASE/584bef123da5fb0571b0199068ceb4ba8fa8e3e3/spring-kafka-1.1.7.RELEASE-sources.jar!/org/springframework/kafka/annotation/KafkaBootstrapConfiguration.java" />
     <entry file="uml://SPRING/mappedClass=de.arkadi.elasticsearch.spring.KafkaConfig">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1821,28 +1853,6 @@
           <SelectedNodes>
             <node>de.arkadi.elasticsearch.spring.AspectLog</node>
           </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/de.arkadi.elasticsearch">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>de.arkadi.elasticsearch</OriginalElement>
-          <nodes>
-            <node x="" y="">de.arkadi.elasticsearch.kafka</node>
-            <node x="" y="">de.arkadi.elasticsearch.restController</node>
-            <node x="" y="">de.arkadi.elasticsearch.model</node>
-            <node x="" y="">de.arkadi.elasticsearch.elasticsearch</node>
-            <node x="" y="">de.arkadi.elasticsearch.spring</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="145.0" y="126.0" />
-          <SelectedNodes />
           <Categories />
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
@@ -2714,38 +2724,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="44" column="37" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/save.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/matchPhrase.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/multiMatch.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="82" column="3" lean-forward="true" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -2756,31 +2738,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/bool.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/edgeGramCompletion.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/match.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -2798,51 +2759,334 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch.client/elasticsearch-rest-client/6.2.3/c4d80676fbaf353cbbd774042e404f56c2813d9d/elasticsearch-rest-client-6.2.3-sources.jar!/org/elasticsearch/client/Response.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/util/function/Function.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+        <state relative-caret-position="275">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/completion.json">
+    <entry file="file://$PROJECT_DIR$/gradlew">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="-3268" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gradle/wrapper/dists/gradle-4.0-all/ac27o8rbd0ic8ih41or9l32mv/gradle-4.0/src/core/org/gradle/api/initialization/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="88" column="16" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java">
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/elasticModule/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="134" column="5" lean-forward="true" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+        <state relative-caret-position="437">
+          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaProducerCompletion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/de.arkadi.elasticsearch">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>de.arkadi.elasticsearch</OriginalElement>
+          <nodes>
+            <node x="237.2705529675638" y="100.0">de.arkadi.elasticsearch.elasticsearch.repository</node>
+            <node x="81.2705529675638" y="100.0">de.arkadi.elasticsearch.kafka</node>
+            <node x="136.7794815389924" y="200.0">de.arkadi.elasticsearch.elasticsearch.service</node>
+            <node x="41.28125" y="280.0">de.arkadi.elasticsearch.restController</node>
+            <node x="128.5101147342995" y="0.0">de.arkadi.elasticsearch.model</node>
+            <node x="123.58186680469291" y="390.0">de.arkadi.elasticsearch.spring</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="de.arkadi.elasticsearch.elasticsearch.service" target="de.arkadi.elasticsearch.elasticsearch.repository">
+              <point x="41.5625" y="-15.0" />
+              <point x="244.8419815389924" y="180.0" />
+              <point x="256.3955529675638" y="180.0" />
+              <point x="-57.375" y="15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.spring">
+              <point x="32.25" y="15.0" />
+              <point x="220.3318668046929" y="450.0" />
+              <point x="93.58186680469291" y="450.0" />
+              <point x="93.58186680469291" y="397.5" />
+              <point x="-64.5" y="-7.5" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.restController" target="de.arkadi.elasticsearch.elasticsearch.service">
+              <point x="0.0" y="-15.0" />
+              <point x="129.28125" y="255.0" />
+              <point x="153.4044815389924" y="255.0" />
+              <point x="-49.875" y="15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.kafka">
+              <point x="-28.666666666666686" y="-15.0" />
+              <point x="159.41520013802622" y="350.0" />
+              <point x="26.0" y="350.0" />
+              <point x="26.0" y="180.0" />
+              <point x="125.55626725327808" y="180.0" />
+              <point x="-17.714285714285722" y="15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.elasticsearch.service">
+              <point x="14.333333333333343" y="-15.0" />
+              <point x="202.41520013802625" y="340.0" />
+              <point x="232.85416666666669" y="340.0" />
+              <point x="232.85416666666669" y="255.0" />
+              <point x="219.9044815389924" y="255.0" />
+              <point x="16.625" y="15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.restController">
+              <point x="-14.333333333333343" y="-15.0" />
+              <point x="173.74853347135956" y="340.0" />
+              <point x="85.28125" y="340.0" />
+              <point x="-44.0" y="15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.kafka" target="de.arkadi.elasticsearch.elasticsearch.service">
+              <point x="53.14285714285717" y="15.0" />
+              <point x="196.41341011042095" y="180.0" />
+              <point x="194.9669815389924" y="180.0" />
+              <point x="-8.3125" y="-15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.elasticsearch.service" target="de.arkadi.elasticsearch.model">
+              <point x="24.9375" y="-15.0" />
+              <point x="228.2169815389924" y="180.0" />
+              <point x="226.7705529675638" y="180.0" />
+              <point x="226.7705529675638" y="80.0" />
+              <point x="220.95455917874395" y="80.0" />
+              <point x="28.444444444444457" y="15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.elasticsearch.service" target="de.arkadi.elasticsearch.kafka">
+              <point x="-58.1875" y="-15.0" />
+              <point x="145.0919815389924" y="180.0" />
+              <point x="143.2705529675638" y="180.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.elasticsearch.repository">
+              <point x="57.33333333333335" y="-15.0" />
+              <point x="245.41520013802625" y="370.0" />
+              <point x="350.9089673913044" y="370.0" />
+              <point x="350.9089673913044" y="180.0" />
+              <point x="371.1455529675638" y="180.0" />
+              <point x="57.375" y="15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.restController" target="de.arkadi.elasticsearch.model">
+              <point x="-58.66666666666666" y="-15.0" />
+              <point x="70.61458333333334" y="255.0" />
+              <point x="50.7705529675638" y="255.0" />
+              <point x="50.7705529675638" y="60.0" />
+              <point x="149.84344806763283" y="60.0" />
+              <point x="-42.66666666666666" y="15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.elasticsearch.repository" target="de.arkadi.elasticsearch.model">
+              <point x="-38.25" y="-15.0" />
+              <point x="275.5205529675638" y="80.0" />
+              <point x="235.17678140096618" y="80.0" />
+              <point x="42.666666666666686" y="15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.kafka" target="de.arkadi.elasticsearch.kafka">
+              <point x="-53.14285714285715" y="15.0" />
+              <point x="90.12769582470665" y="150.0" />
+              <point x="61.2705529675638" y="150.0" />
+              <point x="61.2705529675638" y="115.0" />
+              <point x="-62.0" y="-0.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.kafka" target="de.arkadi.elasticsearch.model">
+              <point x="-41.33333333333334" y="-15.0" />
+              <point x="101.93721963423046" y="70.0" />
+              <point x="164.06567028985506" y="70.0" />
+              <point x="-28.444444444444443" y="15.0" />
+            </edge>
+            <edge source="de.arkadi.elasticsearch.spring" target="de.arkadi.elasticsearch.model">
+              <point x="-57.33333333333337" y="-15.0" />
+              <point x="130.74853347135954" y="370.0" />
+              <point x="4.0" y="370.0" />
+              <point x="4.0" y="50.0" />
+              <point x="135.6212258454106" y="50.0" />
+              <point x="-56.888888888888886" y="15.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.1496789087497241" x="-151.0" y="27.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/spring/KafkaConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1794">
+          <caret line="97" column="65" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.kafka/spring-kafka/1.1.7.RELEASE/584bef123da5fb0571b0199068ceb4ba8fa8e3e3/spring-kafka-1.1.7.RELEASE-sources.jar!/org/springframework/kafka/annotation/KafkaListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1541">
+          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/ResultDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/kafka/KafkaConsumerCompletion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/restController/WebRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+        <state relative-caret-position="260">
+          <caret line="45" column="15" lean-forward="true" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/multiMatch.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/match.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/mapping.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/bool.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/RequestDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/DeleteDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/completion.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.elasticsearch.client/elasticsearch-rest-client/6.2.3/c4d80676fbaf353cbbd774042e404f56c2813d9d/elasticsearch-rest-client-6.2.3-sources.jar!/org/elasticsearch/client/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+          <folding>
+            <element signature="e#2961#2962#0" expanded="true" />
+            <element signature="e#3004#3005#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/service/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="149" column="46" selection-start-line="149" selection-start-column="46" selection-end-line="149" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/elasticsearch/repository/MessageRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="218" column="8" lean-forward="true" selection-start-line="218" selection-start-column="8" selection-end-line="218" selection-end-column="8" />
+        <state relative-caret-position="154">
+          <caret line="258" lean-forward="true" selection-start-line="258" selection-end-line="258" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="82" column="3" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/tweet.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/resources/settings/matchPhrase.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elasticModule/src/main/java/de/arkadi/elasticsearch/model/SaveDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2128">
+          <caret line="120" column="15" selection-start-line="120" selection-start-column="11" selection-end-line="120" selection-end-column="15" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="gradleExecuteTaskHistory">
     <option value="$PROJECT_DIR$" />
+    <option value="clean assemble" />
+    <option value="clean assamble" />
+    <option value="build" />
     <option value="clean build" />
     <option value="clean jar" />
     <option value="clean bootJar" />
@@ -2853,11 +3097,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>Elastic2018Artefact:jar</last-edited>
+          <last-edited>Elastic:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.09283088" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -2869,7 +3114,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.09283088" />
+                <option value="0.3402299" />
               </list>
             </option>
           </splitter-proportions>
@@ -2880,7 +3125,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3402299" />
               </list>
             </option>
           </splitter-proportions>
@@ -2892,7 +3137,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3402299" />
               </list>
             </option>
           </splitter-proportions>
@@ -2900,12 +3145,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Elastic2018Artefact_main|Elastic2018Artefact</last-edited>
+          <last-edited>Spring|elasticModule_main|elasticModule</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.09283088" />
-                <option value="0.6" />
+                <option value="0.3402299" />
               </list>
             </option>
           </splitter-proportions>
@@ -2929,7 +3173,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.09283088" />
+                <option value="0.3402299" />
               </list>
             </option>
           </splitter-proportions>

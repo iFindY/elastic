@@ -52,7 +52,7 @@ public class WebRestController {
   @GetMapping(value = "/stateCompletion")
   public List getCompleation(@RequestParam("request") String request) {
 
-    return messageService.getStateCompletion(request);
+    return messageService.getStateCompletionRest(request);
   }
 
   @GetMapping(value = "/test")

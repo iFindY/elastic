@@ -130,7 +130,7 @@ public class MessageServiceImpl implements MessageService {
   }
 
   @Override
-  public List getStateCompletion(String request) {
+  public List getStateCompletionRest(String request) {
 
     try {
 
@@ -149,6 +149,8 @@ public class MessageServiceImpl implements MessageService {
     try {
       List list = messageRepository.getStateCompletion(request.getText());
       ResultDTO result = new ResultDTO(list);
+      result.setRequestId(request.getRequest_id());
+      result.setAnswerPartition(request.getAnswer_partition());
       kafkaProducerCompletion.send(result);
     }
     catch (IOException e) {

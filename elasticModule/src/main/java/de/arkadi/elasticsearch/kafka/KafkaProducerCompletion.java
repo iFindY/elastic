@@ -21,7 +21,8 @@ public class KafkaProducerCompletion {
 
   public void send(ResultDTO result) {
 
-    kafkaTemplate.send(kafkaTopic, result);
+    //kafkaTemplate.send(kafkaTopic, result);
+    kafkaTemplate.send(kafkaTopic, result.getAnswerPartition(), result);
   }
 
 }
